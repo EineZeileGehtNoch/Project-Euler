@@ -10,12 +10,12 @@ namespace Even_Fibonacci_numbers
     {
         static void Main(string[] args)
         {
-            int maximumFibunacciNumber = 400000;
+            int sumEvenFibunacciNumbers;
+
+            int maximumFibunacciNumber = 4000000;
             List<int> fibunacciNumbers;
 
             fibunacciNumbers = FibunacciGenerator.GetNumbersUpTill(maximumFibunacciNumber);
-
-            int sumEvenFibunacciNumbers;
 
             sumEvenFibunacciNumbers = NumberAdder.sumOfEvenNumbers(fibunacciNumbers);
 

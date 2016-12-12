@@ -10,16 +10,17 @@ namespace Even_Fibonacci_numbers
             fibunacciNumbers = new List<int>();
             int lastFoundFibunacciNumber = 1;
             fibunacciNumbers.Add(lastFoundFibunacciNumber);
+            int indexLastFoundFibunacciNumber = 0;
+            
             lastFoundFibunacciNumber = 2;
-            fibunacciNumbers.Add(2);
-            int indexLastFoundFibunacciNumber = 1;
 
             while (lastFoundFibunacciNumber <= maximumFibunacciNumber)
             {
+                fibunacciNumbers.Add(lastFoundFibunacciNumber);
+                indexLastFoundFibunacciNumber++;
                 lastFoundFibunacciNumber = fibunacciNumbers[indexLastFoundFibunacciNumber - 1] +
                                            fibunacciNumbers[indexLastFoundFibunacciNumber];
-                indexLastFoundFibunacciNumber++;
-            }
+           }
 
             return fibunacciNumbers;
         }
