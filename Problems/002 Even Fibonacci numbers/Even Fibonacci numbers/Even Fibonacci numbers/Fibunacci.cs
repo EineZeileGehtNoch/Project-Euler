@@ -2,9 +2,17 @@
 
 namespace Even_Fibonacci_numbers
 {
-    class FibunacciGenerator
+    class Fibunacci
     {
-        public static List<int> GetNumbersUpTill(int maximumFibunacciNumber)
+        public int SumEvenNumbersUpTo(int maximumFibunacciNumber)
+        {
+            var fibunacciNumbers = GetNumbersUpTo(maximumFibunacciNumber);
+            var sumEvenFibunacciNumbers = NumberAdder.sumOfEvenNumbers(fibunacciNumbers);
+
+            return sumEvenFibunacciNumbers;
+        }
+
+        private List<int> GetNumbersUpTo(int maximumFibunacciNumber)
         {
             List<int> fibunacciNumbers;
             fibunacciNumbers = new List<int>();
