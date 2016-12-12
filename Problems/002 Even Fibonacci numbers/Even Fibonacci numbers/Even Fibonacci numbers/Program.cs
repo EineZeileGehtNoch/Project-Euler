@@ -10,6 +10,12 @@ namespace Even_Fibonacci_numbers
     {
         static void Main(string[] args)
         {
+            int maximumFibunacciNumber = 2;
+            List<int> fibunacciNumbers;
+
+            fibunacciNumbers = FibunacciGenerator.GetFibunacciNumbersUpTill(maximumFibunacciNumber);
+
+
 
         }
     }
