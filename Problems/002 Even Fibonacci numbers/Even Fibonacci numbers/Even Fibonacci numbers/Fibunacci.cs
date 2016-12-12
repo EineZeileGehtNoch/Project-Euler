@@ -7,7 +7,7 @@ namespace Even_Fibonacci_numbers
         public int SumEvenNumbersUpTo(int maximumFibunacciNumber)
         {
             var fibunacciNumbers = GetNumbersUpTo(maximumFibunacciNumber);
-            var sumEvenFibunacciNumbers = NumberAdder.sumOfEvenNumbers(fibunacciNumbers);
+            var sumEvenFibunacciNumbers = NumberAdder.SumOfEvenNumbers(fibunacciNumbers);
 
             return sumEvenFibunacciNumbers;
         }

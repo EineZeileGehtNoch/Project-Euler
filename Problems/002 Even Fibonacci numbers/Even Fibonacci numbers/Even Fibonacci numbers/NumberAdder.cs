@@ -4,19 +4,24 @@ namespace Even_Fibonacci_numbers
 {
     class NumberAdder
     {
-        public static int sumOfEvenNumbers(List<int> fibunacciNumbers)
+        public static int SumOfEvenNumbers(List<int> numbers)
         {
-            int sumEvenFibunacciNumbers;
-            sumEvenFibunacciNumbers = 0;
+            var sumEvenNumbers = 0;
 
-            foreach (int fibunacciNumber in fibunacciNumbers)
+            foreach (int number in numbers)
             {
-                if (fibunacciNumber%2 == 0)
+                if (IsEven(number))
                 {
-                    sumEvenFibunacciNumbers += fibunacciNumber;
+                    sumEvenNumbers += number;
                 }
             }
-            return sumEvenFibunacciNumbers;
+
+            return sumEvenNumbers;
+        }
+
+        private static bool IsEven(int fibunacciNumber)
+        {
+            return fibunacciNumber%2 == 0;
         }
     }
 }
