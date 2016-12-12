@@ -4,7 +4,7 @@ namespace Even_Fibonacci_numbers
 {
     class FibunacciGenerator
     {
-        public static List<int> GetFibunacciNumbersUpTill(int maximumFibunacciNumber)
+        public static List<int> GetNumbersUpTill(int maximumFibunacciNumber)
         {
             List<int> fibunacciNumbers;
             fibunacciNumbers = new List<int>();
