@@ -31,5 +31,16 @@ namespace Even_Fibonacci_numbers.Test
 
             Assert.AreEqual(expected,actual);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(NullReferenceException))]
+        public void NullListSumOfEvenNumbers()
+        {
+            int actual = NumberAdder.SumOfEvenNumbers(null);
+
+            Assert.Fail();
+        }
+
+        
     }
 }
