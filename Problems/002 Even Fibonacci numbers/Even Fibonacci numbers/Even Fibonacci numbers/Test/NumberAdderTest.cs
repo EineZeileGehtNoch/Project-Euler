@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.QualityTools.UnitTestFramework;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Even_Fibonacci_numbers.Test
@@ -12,7 +11,7 @@ namespace Even_Fibonacci_numbers.Test
     public class NumberAdderTest
     {
         [TestMethod]
-        public void OnlyAOne()
+        public void OnlyUneven()
         {
             int expected = 0;
             List<int> onlyOne = new List<int> {1};
@@ -20,6 +19,17 @@ namespace Even_Fibonacci_numbers.Test
             int actual = NumberAdder.SumOfEvenNumbers(onlyOne);
 
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void OnlyEven()
+        {
+            int expected = 42;
+            List<int> onlyEven = new List<int>{40,2};
+
+            int actual = NumberAdder.SumOfEvenNumbers(onlyEven);
+
+            Assert.AreEqual(expected,actual);
         }
     }
 }
