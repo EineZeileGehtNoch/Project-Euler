@@ -19,6 +19,11 @@ namespace Largest_Prime_Number
     {
         static void Main(string[] args)
         {
+            int numberToFactor = 2;
+            while (numberToFactor >0)
+            {
+                // TODO 15:12:2016, EineZeileGehtNoch: Implement PrimeFactor class.
+            }
         }
     }
 }
