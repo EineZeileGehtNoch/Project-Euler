@@ -18,23 +18,35 @@ namespace Multiples_of_3_and_5
 {
     class Program
     {
-        private const int MaxInteger = 1000;
 
         static void Main(string[] args)
         {
-            int sum = 0;
+            int sum;
+            int maxInteger = 1000;
+            List<int> factors = new List<int> {3, 5};
 
-            for (int integer = 0; integer < MaxInteger; integer++)
-            {
-                if(integer%3==0||integer%5==0)
-                {
-                    sum += integer;
-                }
-            }
+            sum = SumOfNumbersDividedByFactors(maxInteger, factors);
 
             Console.WriteLine("Sum: " + sum);
             Console.ReadKey();
 
+        }
+
+        private static int SumOfNumbersDividedByFactors(int maxInteger, List<int> factors)
+        {
+            int sum;
+            int dummySum = 0;
+
+            for (int integer = 0; integer < maxInteger; integer++)
+            {
+                bool isDividedByFactors = integer%factors[0] == 0 || integer%factors[1] == 0;
+                if (isDividedByFactors)
+                {
+                    dummySum += integer;
+                }
+            }
+            sum = dummySum;
+            return sum;
         }
     }
 }
