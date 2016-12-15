@@ -16,19 +16,30 @@ namespace Largest_Prime_Number
         private readonly List<int> _primes;
         private static readonly int FirstPrime = 2;
 
-        public int ReturnNextPrimeNumber()
+        public int ReturnFirstOrNextPrime()
         {
-            
-            if (_primes.Count==0)
-            {
-                _primes.Add(FirstPrime);
-                return FirstPrime;
-            }
+            return FirstTimeUsed() ? GetFirstPrime() : GetNextPrime();
+        }
 
+        private bool FirstTimeUsed()
+        {
+            return _primes.Count==0;
+        }
+
+        private int GetFirstPrime()
+        {
+            int nextPrime;
+            _primes.Add(FirstPrime);
+            return FirstPrime;
+        }
+
+        private int GetNextPrime()
+        {
+            int nextPrime;
             int firstCandidate = ++_primes[_primes.Count - 1];
 
 
-            for (int candidate = 0; candidate < Int32.MaxValue; candidate++)
+            for (int candidate = firstCandidate; candidate < Int32.MaxValue; candidate++)
             {
                 if (CandidateIsPrime(candidate))
                 {

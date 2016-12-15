@@ -35,18 +35,18 @@ namespace Largest_Prime_Number
         {
             PrimeFactory primeFactory = new PrimeFactory();
 
-            int HighestPrime = 1;
+            int highestPrime = 1;
             while (numberToFactor > 1)
             {
-                int prime = primeFactory.ReturnNextPrimeNumber();
+                int prime = primeFactory.ReturnFirstOrNextPrime();
 
                 while (numberToFactor%prime == 0)
                 {
-                    HighestPrime = prime;
+                    highestPrime = prime;
                     numberToFactor /= prime;
                 }
             }
-            return HighestPrime;
+            return highestPrime;
         }
     }
 }
