@@ -10,20 +10,20 @@ namespace Largest_Prime_Number
     {
         public PrimeFactory()
         {
-            _primes = new List<int>();
+            _primes = new List<long>();
         }
 
-        private readonly List<int> _primes;
-        private const int FirstPrime = 2;
+        private readonly List<long> _primes;
+        private const long FirstPrime = 2;
 
-        public static int GetHighestPrime(int numberToFactor)
+        public static long GetHighestPrime(long numberToFactor)
         {
             PrimeFactory primeFactory = new PrimeFactory();
 
-            int highestPrime = 1;
+            long highestPrime = 1;
             while (numberToFactor > 1)
             {
-                int prime = primeFactory.ReturnFirstOrNextPrime();
+                long prime = primeFactory.ReturnFirstOrNextPrime();
 
                 while (numberToFactor % prime == 0)
                 {
@@ -34,7 +34,7 @@ namespace Largest_Prime_Number
             return highestPrime;
         }
 
-        private int ReturnFirstOrNextPrime()
+        private long ReturnFirstOrNextPrime()
         {
             return FirstTimeUsed() ? GetFirstPrime() : GetNextPrime();
         }
@@ -44,18 +44,18 @@ namespace Largest_Prime_Number
             return _primes.Count==0;
         }
 
-        private int GetFirstPrime()
+        private long GetFirstPrime()
         {
             _primes.Add(FirstPrime);
             return FirstPrime;
         }
 
-        private int GetNextPrime()
+        private long GetNextPrime()
         {
-            int firstCandidate = _primes[_primes.Count - 1] + 1;
+            long firstCandidate = _primes[_primes.Count - 1] + 1;
 
 
-            for (int candidate = firstCandidate; candidate < Int32.MaxValue; candidate++)
+            for (long candidate = firstCandidate; candidate < Int64.MaxValue; candidate++)
             {
                 if (CandidateIsPrime(candidate))
                 {
@@ -63,13 +63,13 @@ namespace Largest_Prime_Number
                     return candidate;
                 }
             }
-            throw new Exception("There was no next prime Number before going over Int32.MaxValue:" + Int32.MaxValue);
+            throw new Exception("There was no next prime Number before going over long32.MaxValue:" + Int64.MaxValue);
         }
 
-        private bool CandidateIsPrime(int candidate)
+        private bool CandidateIsPrime(long candidate)
         {
             var candidateIsPrime = true;
-            foreach (int prime in _primes)
+            foreach (long prime in _primes)
             {
                 if (CandidateIsDividedByPrime(candidate, prime))
                 {
@@ -79,7 +79,7 @@ namespace Largest_Prime_Number
             return candidateIsPrime;
         }
 
-        private static bool CandidateIsDividedByPrime(int candidate, int prime)
+        private static bool CandidateIsDividedByPrime(long candidate, long prime)
         {
             return candidate%prime == 0;
         }

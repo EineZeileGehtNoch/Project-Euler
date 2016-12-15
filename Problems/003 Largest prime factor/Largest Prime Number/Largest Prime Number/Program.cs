@@ -19,10 +19,10 @@ namespace Largest_Prime_Number
     {
         static void Main(string[] args)
         {
-            int numberToFactor = 5;
+            long numberToFactor = 600851475143;
 
 
-            int highestPrime = PrimeFactory.GetHighestPrime(numberToFactor);
+            long highestPrime = PrimeFactory.GetHighestPrime(numberToFactor);
            
             Console.WriteLine("Highest prime factor of "+ numberToFactor +": " + highestPrime);
             Console.ReadKey();

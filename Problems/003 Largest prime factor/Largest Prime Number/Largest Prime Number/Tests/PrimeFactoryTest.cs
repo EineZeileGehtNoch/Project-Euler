@@ -9,10 +9,10 @@ namespace Largest_Prime_Number.Tests
         [TestMethod]
         public void LargestPrimeFactorOfTwo()
         {
-            int numberToFactor = 2;
-            int expected = 2;
+            long numberToFactor = 2;
+            long expected = 2;
 
-            int actual = PrimeFactory.GetHighestPrime(numberToFactor);
+            long actual = PrimeFactory.GetHighestPrime(numberToFactor);
 
             Assert.AreEqual(expected, actual);
         }
@@ -20,10 +20,10 @@ namespace Largest_Prime_Number.Tests
         [TestMethod]
         public void LargestPrimeFactorOfSix()
         {
-            int numberToFactor = 2*3;
-            int expected = 3;
+            long numberToFactor = 2*3;
+            long expected = 3;
 
-            int actual = PrimeFactory.GetHighestPrime(numberToFactor);
+            long actual = PrimeFactory.GetHighestPrime(numberToFactor);
 
             Assert.AreEqual(expected,actual);
         }
@@ -31,10 +31,10 @@ namespace Largest_Prime_Number.Tests
         [TestMethod]
         public void LargestPrimeFactorOfLargeNumber()
         {
-            int numberToFactor = 13195;
-            int expected = 29;
+            long numberToFactor = 13195;
+            long expected = 29;
 
-            int actual = PrimeFactory.GetHighestPrime(numberToFactor);
+            long actual = PrimeFactory.GetHighestPrime(numberToFactor);
 
             Assert.AreEqual(expected,actual);
         }
