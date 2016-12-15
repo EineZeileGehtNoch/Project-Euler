@@ -52,7 +52,7 @@ namespace Largest_Prime_Number
 
         private int GetNextPrime()
         {
-            int firstCandidate = ++_primes[_primes.Count - 1];
+            int firstCandidate = _primes[_primes.Count - 1] + 1;
 
 
             for (int candidate = firstCandidate; candidate < Int32.MaxValue; candidate++)
@@ -60,10 +60,8 @@ namespace Largest_Prime_Number
                 if (CandidateIsPrime(candidate))
                 {
                     _primes.Add(candidate);
-                    Console.WriteLine(" -- " + candidate);
                     return candidate;
                 }
-                candidate++;
             }
             throw new Exception("There was no next prime Number before going over Int32.MaxValue:" + Int32.MaxValue);
         }
