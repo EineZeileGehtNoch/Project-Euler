@@ -19,34 +19,15 @@ namespace Largest_Prime_Number
     {
         static void Main(string[] args)
         {
-            int numberToFactor = 2;
-            int highestPrime;
-            
+            int numberToFactor = 21;
 
-            var HighestPrime = GetHighestPrime(numberToFactor);
-            highestPrime = HighestPrime;
 
-            Console.WriteLine("Highest prime factor: " + highestPrime);
+            int highestPrime = PrimeFactory.GetHighestPrime(numberToFactor);
+           
+            Console.WriteLine("Highest prime factor of "+ numberToFactor +": " + highestPrime);
             Console.ReadKey();
 
         }
 
-        private static int GetHighestPrime(int numberToFactor)
-        {
-            PrimeFactory primeFactory = new PrimeFactory();
-
-            int highestPrime = 1;
-            while (numberToFactor > 1)
-            {
-                int prime = primeFactory.ReturnFirstOrNextPrime();
-
-                while (numberToFactor%prime == 0)
-                {
-                    highestPrime = prime;
-                    numberToFactor /= prime;
-                }
-            }
-            return highestPrime;
-        }
     }
 }

@@ -16,7 +16,25 @@ namespace Largest_Prime_Number
         private readonly List<int> _primes;
         private static readonly int FirstPrime = 2;
 
-        public int ReturnFirstOrNextPrime()
+        public static int GetHighestPrime(int numberToFactor)
+        {
+            PrimeFactory primeFactory = new PrimeFactory();
+
+            int highestPrime = 1;
+            while (numberToFactor > 1)
+            {
+                int prime = primeFactory.ReturnFirstOrNextPrime();
+
+                while (numberToFactor % prime == 0)
+                {
+                    highestPrime = prime;
+                    numberToFactor /= prime;
+                }
+            }
+            return highestPrime;
+        }
+
+        private int ReturnFirstOrNextPrime()
         {
             return FirstTimeUsed() ? GetFirstPrime() : GetNextPrime();
         }
