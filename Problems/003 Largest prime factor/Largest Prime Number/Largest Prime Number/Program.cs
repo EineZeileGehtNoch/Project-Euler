@@ -20,24 +20,33 @@ namespace Largest_Prime_Number
         static void Main(string[] args)
         {
             int numberToFactor = 2;
-            PrimeFactory primeFactory= new PrimeFactory();
+            int highestPrime;
+            
 
-            int highestPrime = 1;
-            while (numberToFactor >0)
-            {
-                int prime = primeFactory.ReturnNextPrimeNumber();
-
-                while (numberToFactor%prime==0)
-                {
-                    highestPrime = prime;
-                    numberToFactor /= prime;
-                }
-            }
+            var HighestPrime = GetHighestPrime(numberToFactor);
+            highestPrime = HighestPrime;
 
             Console.WriteLine("Highest prime factor: " + highestPrime);
             Console.ReadKey();
 
         }
 
+        private static int GetHighestPrime(int numberToFactor)
+        {
+            PrimeFactory primeFactory = new PrimeFactory();
+
+            int HighestPrime = 1;
+            while (numberToFactor > 1)
+            {
+                int prime = primeFactory.ReturnNextPrimeNumber();
+
+                while (numberToFactor%prime == 0)
+                {
+                    HighestPrime = prime;
+                    numberToFactor /= prime;
+                }
+            }
+            return HighestPrime;
+        }
     }
 }
