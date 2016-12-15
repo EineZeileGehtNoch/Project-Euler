@@ -1,4 +1,5 @@
-﻿using System.Reflection.Emit;
+﻿using System;
+using System.Reflection.Emit;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Largest_Prime_Number.Tests
@@ -25,7 +26,7 @@ namespace Largest_Prime_Number.Tests
 
             long actual = PrimeFactory.GetHighestPrime(numberToFactor);
 
-            Assert.AreEqual(expected,actual);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -36,7 +37,7 @@ namespace Largest_Prime_Number.Tests
 
             long actual = PrimeFactory.GetHighestPrime(numberToFactor);
 
-            Assert.AreEqual(expected,actual);
+            Assert.AreEqual(expected, actual);
         }
     }
 }

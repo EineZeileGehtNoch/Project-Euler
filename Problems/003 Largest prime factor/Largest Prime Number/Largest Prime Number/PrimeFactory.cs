@@ -55,7 +55,7 @@ namespace Largest_Prime_Number
             long firstCandidate = _primes[_primes.Count - 1] + 1;
 
 
-            for (long candidate = firstCandidate; candidate < Int64.MaxValue; candidate++)
+            for (long candidate = firstCandidate;; candidate++)
             {
                 if (CandidateIsPrime(candidate))
                 {
@@ -63,8 +63,8 @@ namespace Largest_Prime_Number
                     return candidate;
                 }
             }
-            throw new Exception("There was no next prime Number before going over long32.MaxValue:" + Int64.MaxValue);
-        }
+            
+       }
 
         private bool CandidateIsPrime(long candidate)
         {
