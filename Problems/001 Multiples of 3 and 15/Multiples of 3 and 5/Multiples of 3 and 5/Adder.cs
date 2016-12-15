@@ -11,8 +11,8 @@ namespace Multiples_of_3_and_5
 
             for (int integer = 0; integer < maxInteger; integer++)
             {
-                Program._isDividedByFactors = integer%factors[0] == 0 || integer%factors[1] == 0;
-                if (Program._isDividedByFactors)
+                bool isDividedByFactors = integer%factors[0] == 0 || integer%factors[1] == 0;
+                if (isDividedByFactors)
                 {
                     dummySum += integer;
                 }
