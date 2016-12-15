@@ -27,5 +27,16 @@ namespace Largest_Prime_Number.Tests
 
             Assert.AreEqual(expected,actual);
         }
+
+        [TestMethod]
+        public void LargestPrimeFactorOfLargeNumber()
+        {
+            int numberToFactor = 13195;
+            int expected = 29;
+
+            int actual = PrimeFactory.GetHighestPrime(numberToFactor);
+
+            Assert.AreEqual(expected,actual);
+        }
     }
 }
