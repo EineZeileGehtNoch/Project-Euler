@@ -14,7 +14,7 @@ namespace Largest_Prime_Number
         }
 
         private readonly List<int> _primes;
-        private static readonly int FirstPrime = 2;
+        private const int FirstPrime = 2;
 
         public static int GetHighestPrime(int numberToFactor)
         {
