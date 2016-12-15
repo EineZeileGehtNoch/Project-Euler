@@ -20,10 +20,20 @@ namespace Largest_Prime_Number
         static void Main(string[] args)
         {
             int numberToFactor = 2;
+            PrimeFactory primeFactory= new PrimeFactory();
+
+            int highestPrime = 1;
             while (numberToFactor >0)
             {
-                // TODO 15:12:2016, EineZeileGehtNoch: Implement PrimeFactor class.
+                int prime = primeFactory.ReturnNextPrimeNumber();
+
+                while (numberToFactor%prime==0)
+                {
+                    highestPrime = prime;
+                    numberToFactor /= prime;
+                }
             }
         }
+        
     }
 }
