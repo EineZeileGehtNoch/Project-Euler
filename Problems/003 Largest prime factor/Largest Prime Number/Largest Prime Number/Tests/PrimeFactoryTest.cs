@@ -15,5 +15,16 @@ namespace Largest_Prime_Number.Tests
 
             Assert.AreEqual(expected,actual);
         }
+
+        [TestMethod]
+        public void LargestPrimeFactorOfTwoFactors()
+        {
+            int numberToFactor = 6;
+            int expected = 3;
+
+            int actual = PrimeFactory.GetHighestPrime(numberToFactor);
+
+            Assert.AreEqual(expected,actual);
+        }
     }
 }

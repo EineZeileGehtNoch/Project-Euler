@@ -19,7 +19,7 @@ namespace Largest_Prime_Number
     {
         static void Main(string[] args)
         {
-            int numberToFactor = 21;
+            int numberToFactor = 30;
 
 
             int highestPrime = PrimeFactory.GetHighestPrime(numberToFactor);
