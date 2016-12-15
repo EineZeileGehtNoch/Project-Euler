@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Reflection.Emit;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Largest_Prime_Number.Tests
 {
@@ -13,13 +14,13 @@ namespace Largest_Prime_Number.Tests
 
             int actual = PrimeFactory.GetHighestPrime(numberToFactor);
 
-            Assert.AreEqual(expected,actual);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void LargestPrimeFactorOfTwoFactors()
+        public void LargestPrimeFactorOfSix()
         {
-            int numberToFactor = 6;
+            int numberToFactor = 2*3;
             int expected = 3;
 
             int actual = PrimeFactory.GetHighestPrime(numberToFactor);

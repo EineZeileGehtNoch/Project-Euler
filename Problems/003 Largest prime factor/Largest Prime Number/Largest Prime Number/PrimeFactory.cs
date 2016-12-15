@@ -46,14 +46,12 @@ namespace Largest_Prime_Number
 
         private int GetFirstPrime()
         {
-            int nextPrime;
             _primes.Add(FirstPrime);
             return FirstPrime;
         }
 
         private int GetNextPrime()
         {
-            int nextPrime;
             int firstCandidate = ++_primes[_primes.Count - 1];
 
 
@@ -62,6 +60,7 @@ namespace Largest_Prime_Number
                 if (CandidateIsPrime(candidate))
                 {
                     _primes.Add(candidate);
+                    Console.WriteLine(" -- " + candidate);
                     return candidate;
                 }
                 candidate++;
@@ -74,12 +73,17 @@ namespace Largest_Prime_Number
             var candidateIsPrime = true;
             foreach (int prime in _primes)
             {
-                if (candidate%prime != 0)
+                if (CandidateIsDividedByPrime(candidate, prime))
                 {
                     candidateIsPrime = false;
                 }
             }
             return candidateIsPrime;
+        }
+
+        private static bool CandidateIsDividedByPrime(int candidate, int prime)
+        {
+            return candidate%prime == 0;
         }
     }
 }
