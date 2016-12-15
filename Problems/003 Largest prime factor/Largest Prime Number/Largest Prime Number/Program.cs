@@ -33,7 +33,11 @@ namespace Largest_Prime_Number
                     numberToFactor /= prime;
                 }
             }
+
+            Console.WriteLine("Highest prime factor: " + highestPrime);
+            Console.ReadKey();
+
         }
-        
+
     }
 }

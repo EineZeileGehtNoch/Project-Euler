@@ -14,9 +14,17 @@ namespace Largest_Prime_Number
         }
 
         private List<int> _primes;
+        private static readonly int FirstPrime = 2;
 
         public int ReturnNextPrimeNumber()
         {
+            
+            if (_primes.Count==0)
+            {
+                _primes.Add(FirstPrime);
+                return FirstPrime;
+            }
+
             int firstCandidate = _primes[_primes.Count - 1] + 1;
             for (int candidate = firstCandidate; ; candidate++)
             {
