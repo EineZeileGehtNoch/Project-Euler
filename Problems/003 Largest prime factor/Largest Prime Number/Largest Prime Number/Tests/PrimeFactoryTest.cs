@@ -1,6 +1,4 @@
-﻿using System;
-using System.Reflection.Emit;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Largest_Prime_Number.Tests
 {
