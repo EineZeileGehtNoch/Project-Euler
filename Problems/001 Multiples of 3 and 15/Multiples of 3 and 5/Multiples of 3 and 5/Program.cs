@@ -21,14 +21,13 @@ namespace Multiples_of_3_and_5
 
         static void Main(string[] args)
         {
-            int maxInteger = 1000;
+            int upperBound = 1000;
             List<int> factors = new List<int> {3, 5};
 
-            int sum = Adder.SumOfNumbersDividedByFactors(maxInteger, factors);
+            int sum = Adder.SumOfNumbersBelowDivisibleByAnyFactor(upperBound, factors);
 
             Console.WriteLine("Sum: " + sum);
             Console.ReadKey();
-
         }
     }
 }
