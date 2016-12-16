@@ -13,11 +13,11 @@ namespace Multiples_of_3_and_5
         [TestMethod]
         public void TrivalFactor()
         {
-            int numberToFactor = 10;
+            int upperBound = 10;
             List<int> factor = new List<int> {1};
             int expected = 45;
 
-            int actual = Adder.SumOfNumbersBelowDivisibleByAnyFactor(numberToFactor, factor);
+            int actual = Adder.SumOfNumbersBelowDivisibleByAnyFactor(upperBound, factor);
 
             Assert.AreEqual(expected,actual);
         }
@@ -25,11 +25,23 @@ namespace Multiples_of_3_and_5
         [TestMethod]
         public void NoFactors()
         {
-            int numberToFactor = 10;
+            int upperBound = 10;
             List<int> factor = new List<int>();
             int expected = 0;
 
-            int actual = Adder.SumOfNumbersBelowDivisibleByAnyFactor(numberToFactor, factor);
+            int actual = Adder.SumOfNumbersBelowDivisibleByAnyFactor(upperBound, factor);
+
+            Assert.AreEqual(expected,actual);
+        }
+
+        [TestMethod]
+        public void SumOfNumbersBelowFifteenDivisibleByThreeOrFive()
+        {
+            int upperBound = 10;
+            List<int> factors = new List<int> {3, 5};
+            int expected = 23;
+
+            int actual = Adder.SumOfNumbersBelowDivisibleByAnyFactor(upperBound, factors);
 
             Assert.AreEqual(expected,actual);
         }
