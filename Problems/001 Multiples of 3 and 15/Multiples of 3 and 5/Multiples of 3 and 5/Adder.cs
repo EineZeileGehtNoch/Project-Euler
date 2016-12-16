@@ -6,19 +6,22 @@ namespace Multiples_of_3_and_5
     {
         public static int SumOfNumbersDividedByFactors(int maxInteger, List<int> factors)
         {
-            int sum;
-            int dummySum = 0;
+            int sum = 0;
 
-            for (int integer = 0; integer < maxInteger; integer++)
+            for (int integer = 1; integer < maxInteger; integer++)
             {
-                bool isDividedByFactors = integer%factors[0] == 0 || integer%factors[1] == 0;
+                bool isDividedByFactors = IsDividedByFactors(factors, integer);
                 if (isDividedByFactors)
                 {
-                    dummySum += integer;
+                    sum += integer;
                 }
             }
-            sum = dummySum;
-            return sum;
+            return  sum;
+        }
+
+        private static bool IsDividedByFactors(List<int> factors, int integer)
+        {
+            return integer%factors[0] == 0 || integer%factors[1] == 0;
         }
     }
 }
