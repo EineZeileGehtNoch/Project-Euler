@@ -4,13 +4,13 @@ namespace Multiples_of_3_and_5
 {
     class Adder
     {
-        public static int SumOfNumbersDividedByFactors(int maxInteger, List<int> factors)
+        public static int SumOfNumbersBelowDivisibleByAnyFactor(int maxInteger, List<int> factors)
         {
             int sum = 0;
 
             for (int integer = 1; integer < maxInteger; integer++)
             {
-                bool isDividedByFactors = IsDividedByFactors(factors, integer);
+                bool isDividedByFactors = IsDivisibleByAnyFactor(factors, integer);
                 if (isDividedByFactors)
                 {
                     sum += integer;
@@ -19,9 +19,22 @@ namespace Multiples_of_3_and_5
             return  sum;
         }
 
-        private static bool IsDividedByFactors(List<int> factors, int integer)
+        private static bool IsDivisibleByAnyFactor(List<int> factors, int integer)
         {
-            return integer%factors[0] == 0 || integer%factors[1] == 0;
+            foreach (int factor in factors)
+            {
+                if (IntegerIsDivisibleByFactor(integer, factor))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private static bool IntegerIsDivisibleByFactor(int integer, int factor)
+        {
+            return integer%factor==0;
         }
     }
 }
