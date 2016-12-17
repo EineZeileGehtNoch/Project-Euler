@@ -4,40 +4,43 @@ namespace Even_Fibonacci_numbers
 {
     class Fibunacci
     {
-        List<int> fibunacciNumbers = new List<int>();
+        readonly List<int> _fibunacciNumbers = new List<int>();
+        private int _maximumFibunacciNumber;
 
         public List<int> GetFibunacciNumbersUpTo(int maximumFibunacciNumber)
         {
-            if (UpperBoundTooLow(maximumFibunacciNumber))
+            _maximumFibunacciNumber = maximumFibunacciNumber;
+
+            if (UpperBoundNotTooLow())
             {
-                return fibunacciNumbers;
+                ComputeFibunacciNumbers();
             }
 
-            ComputeFibunacciNumbers(maximumFibunacciNumber);
-
-            return fibunacciNumbers;
+            return _fibunacciNumbers;
         }
 
-        private void ComputeFibunacciNumbers(int maximumFibunacciNumber)
+        private static readonly int LOWEST_FIBUNACCI_NUMBER=1;
+
+        private void ComputeFibunacciNumbers()
         {
             int lastFoundFibunacciNumber = 1;
-            fibunacciNumbers.Add(lastFoundFibunacciNumber);
+            _fibunacciNumbers.Add(lastFoundFibunacciNumber);
 
             lastFoundFibunacciNumber = 2;
 
             int indexLastFoundFibunacciNumber = 0;
-            while (lastFoundFibunacciNumber <= maximumFibunacciNumber)
+            while (lastFoundFibunacciNumber <= _maximumFibunacciNumber)
             {
-                fibunacciNumbers.Add(lastFoundFibunacciNumber);
+                _fibunacciNumbers.Add(lastFoundFibunacciNumber);
                 indexLastFoundFibunacciNumber++;
-                lastFoundFibunacciNumber = fibunacciNumbers[indexLastFoundFibunacciNumber - 1] +
-                                           fibunacciNumbers[indexLastFoundFibunacciNumber];
+                lastFoundFibunacciNumber = _fibunacciNumbers[indexLastFoundFibunacciNumber - 1] +
+                                           _fibunacciNumbers[indexLastFoundFibunacciNumber];
             }
         }
 
-        private static bool UpperBoundTooLow(int maximumFibunacciNumber)
+        private bool UpperBoundNotTooLow()
         {
-            return maximumFibunacciNumber<1;
+            return _maximumFibunacciNumber>=LOWEST_FIBUNACCI_NUMBER;
         }
     }
 }
