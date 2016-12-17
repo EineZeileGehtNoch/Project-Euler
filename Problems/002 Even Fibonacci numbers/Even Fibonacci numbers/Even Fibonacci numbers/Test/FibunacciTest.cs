@@ -19,7 +19,7 @@ namespace Even_Fibonacci_numbers.Test
 
             List<int> actual = fibunacci.GetFibunacciNumbersUpTo(upperBound);
 
-            Assert.AreEqual(expected,actual);
+            CollectionAssert.AreEqual(expected,actual);
         }
     }
 }
