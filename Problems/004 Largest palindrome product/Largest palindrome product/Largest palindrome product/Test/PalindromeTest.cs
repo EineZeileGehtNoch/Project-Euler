@@ -7,15 +7,23 @@ namespace Largest_palindrome_product.Test
     {
 
         [TestMethod]
-        public void TrivialPalindrome()
+        public void SmallestPalindrome()
         {
             int number = 1;
-            bool expected = true;
 
             bool actual = Palindrome.NumberIsPalindrome(number);
 
-            Assert.AreEqual(expected,actual);
+            Assert.AreEqual(true,actual);
         }
 
+        [TestMethod]
+        public void SmallestNonPalindrome()
+        {
+            int number = 12;
+
+            bool actual = Palindrome.NumberIsPalindrome(number);
+
+            Assert.AreEqual(false,actual);
+        }
     }
 }
