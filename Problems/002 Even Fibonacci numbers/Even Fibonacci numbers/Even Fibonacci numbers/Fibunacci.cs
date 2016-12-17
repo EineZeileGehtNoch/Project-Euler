@@ -44,31 +44,50 @@ namespace Even_Fibonacci_numbers
 
         private void FillList()
         {
-            _indexLastFoundFibunacciNumber = INDEX_WITHOUT_FIBUNACCI_NUMBERS_FOUND;
+            SetDefaultIndex();
 
-            _lastFoundFibunacciNumber = LOWEST_FIBUNACCI_NUMBER;
-            SaveLastFibunacciNumber();
+            ComputeAndSaveFirstFibunacciNumber();
 
-            _lastFoundFibunacciNumber = SECOND_TO_LOWEST_FIBUNACCI_NUMBER;
+            ComputeSecondFibunacciNumber();
 
-            while (_lastFoundFibunacciNumber <= _upperBound)
+            while (LastFoundFibunacciNumberIsNotTooLarge())
             {
-                SaveLastFibunacciNumber();
-                _lastFoundFibunacciNumber = ComputeNextFibunacciNumber(_lastFoundFibunacciNumber);
+                SaveLastComputedFibunacciNumber();
+                ComputeNextFibunacciNumber();
             }
         }
 
-        private void SaveLastFibunacciNumber()
+        private void ComputeSecondFibunacciNumber()
+        {
+            _lastFoundFibunacciNumber = SECOND_TO_LOWEST_FIBUNACCI_NUMBER;
+        }
+
+        private void ComputeAndSaveFirstFibunacciNumber()
+        {
+            _lastFoundFibunacciNumber = LOWEST_FIBUNACCI_NUMBER;
+            SaveLastComputedFibunacciNumber();
+        }
+
+        private void SetDefaultIndex()
+        {
+            _indexLastFoundFibunacciNumber = INDEX_WITHOUT_FIBUNACCI_NUMBERS_FOUND;
+        }
+
+        private bool LastFoundFibunacciNumberIsNotTooLarge()
+        {
+            return _lastFoundFibunacciNumber <= _upperBound;
+        }
+
+        private void SaveLastComputedFibunacciNumber()
         {
             _fibunacciNumbers.Add(_lastFoundFibunacciNumber);
             _indexLastFoundFibunacciNumber++;
         }
 
-        private int ComputeNextFibunacciNumber(int lastFoundFibunacciNumber)
+        private void ComputeNextFibunacciNumber()
         {
-            lastFoundFibunacciNumber = _fibunacciNumbers[_indexLastFoundFibunacciNumber - 1] +
+            _lastFoundFibunacciNumber = _fibunacciNumbers[_indexLastFoundFibunacciNumber - 1] +
                                        _fibunacciNumbers[_indexLastFoundFibunacciNumber];
-            return lastFoundFibunacciNumber;
         }
     }
 }
