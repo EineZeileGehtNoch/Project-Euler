@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Largest_palindrome_product
 {
@@ -37,9 +38,9 @@ namespace Largest_palindrome_product
             return true;
         }
 
-        private static bool DigitIsNotSimmetricalInNumber(int index)
+        private static void CreateEmptyDigitList()
         {
-            return digits[index] == digits[digits.Count - index - 1];
+            digits = new List<int>();
         }
 
         private static void FillDigitList()
@@ -52,18 +53,13 @@ namespace Largest_palindrome_product
 
         private static bool DigitsLeft()
         {
-            return _number>1;
+            return _number>0;
         }
 
         private static void SafeAndRemoveLastDigit()
         {
             SafeLastDigit(digits);
             RemoveLastDigitFromNumber();
-        }
-
-        private static void CreateEmptyDigitList()
-        {
-            digits = new List<int>();
         }
 
         private static void RemoveLastDigitFromNumber()
@@ -74,6 +70,11 @@ namespace Largest_palindrome_product
         private static void SafeLastDigit(List<int> digits)
         {
             digits.Add(_number%10);
+        }
+
+        private static bool DigitIsNotSimmetricalInNumber(int index)
+        {
+            return digits[index] != digits[digits.Count - index-1];
         }
     }
 }
