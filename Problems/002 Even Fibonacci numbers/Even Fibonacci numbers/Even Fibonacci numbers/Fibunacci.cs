@@ -4,16 +4,28 @@ namespace Even_Fibonacci_numbers
 {
     class Fibunacci
     {
+        List<int> fibunacciNumbers = new List<int>();
+
         public List<int> GetFibunacciNumbersUpTo(int maximumFibunacciNumber)
         {
-            List<int> fibunacciNumbers;
-            fibunacciNumbers = new List<int>();
+            if (UpperBoundTooLow(maximumFibunacciNumber))
+            {
+                return fibunacciNumbers;
+            }
+
+            ComputeFibunacciNumbers(maximumFibunacciNumber);
+
+            return fibunacciNumbers;
+        }
+
+        private void ComputeFibunacciNumbers(int maximumFibunacciNumber)
+        {
             int lastFoundFibunacciNumber = 1;
             fibunacciNumbers.Add(lastFoundFibunacciNumber);
-            int indexLastFoundFibunacciNumber = 0;
-            
+
             lastFoundFibunacciNumber = 2;
 
+            int indexLastFoundFibunacciNumber = 0;
             while (lastFoundFibunacciNumber <= maximumFibunacciNumber)
             {
                 fibunacciNumbers.Add(lastFoundFibunacciNumber);
@@ -21,8 +33,11 @@ namespace Even_Fibonacci_numbers
                 lastFoundFibunacciNumber = fibunacciNumbers[indexLastFoundFibunacciNumber - 1] +
                                            fibunacciNumbers[indexLastFoundFibunacciNumber];
             }
+        }
 
-            return fibunacciNumbers;
+        private static bool UpperBoundTooLow(int maximumFibunacciNumber)
+        {
+            return maximumFibunacciNumber<1;
         }
     }
 }
