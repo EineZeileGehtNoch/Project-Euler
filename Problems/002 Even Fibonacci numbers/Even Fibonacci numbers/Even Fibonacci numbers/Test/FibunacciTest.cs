@@ -21,5 +21,17 @@ namespace Even_Fibonacci_numbers.Test
 
             CollectionAssert.AreEqual(expected,actual);
         }
+
+        [TestMethod]
+        public void OnlyFirstFibunacciNumber()
+        {
+            int upperBound = 1;
+            Fibunacci fibunacci = new Fibunacci();
+            List<int> expected = new List<int>{1};
+
+            List<int> actual = fibunacci.GetFibunacciNumbersUpTo(upperBound);
+
+            CollectionAssert.AreEqual(expected,actual);
+        }
     }
 }
