@@ -7,9 +7,12 @@ namespace Even_Fibonacci_numbers
         List<int> _fibunacciNumbers;
         private int _upperBound;
         private int _indexLastFoundFibunacciNumber;
+        private int _lastFoundFibunacciNumber;
 
-        private static readonly int LOWEST_FIBUNACCI_NUMBER=1;
+
+        private static readonly int LOWEST_FIBUNACCI_NUMBER = 1;
         private static readonly int SECOND_TO_LOWEST_FIBUNACCI_NUMBER = 2;
+        private static readonly int INDEX_WITHOUT_FIBUNACCI_NUMBERS_FOUND = -1;
 
         public List<int> GetFibunacciNumbersUpTo(int upperBound)
         {
@@ -30,31 +33,42 @@ namespace Even_Fibonacci_numbers
         {
             if (UpperBoundNotTooLow())
             {
-                ComputeFibunacciNumbers();
-            }
-        }
-
-        private void ComputeFibunacciNumbers()
-        {
-            int lastFoundFibunacciNumber = LOWEST_FIBUNACCI_NUMBER;
-
-            _fibunacciNumbers.Add(lastFoundFibunacciNumber);
-
-            lastFoundFibunacciNumber = SECOND_TO_LOWEST_FIBUNACCI_NUMBER;
-
-            _indexLastFoundFibunacciNumber = 0;
-            while (lastFoundFibunacciNumber <= _upperBound)
-            {
-                _fibunacciNumbers.Add(lastFoundFibunacciNumber);
-                _indexLastFoundFibunacciNumber++;
-                lastFoundFibunacciNumber = _fibunacciNumbers[_indexLastFoundFibunacciNumber - 1] +
-                                           _fibunacciNumbers[_indexLastFoundFibunacciNumber];
+                FillList();
             }
         }
 
         private bool UpperBoundNotTooLow()
         {
-            return _upperBound>=LOWEST_FIBUNACCI_NUMBER;
+            return _upperBound >= LOWEST_FIBUNACCI_NUMBER;
+        }
+
+        private void FillList()
+        {
+            _indexLastFoundFibunacciNumber = INDEX_WITHOUT_FIBUNACCI_NUMBERS_FOUND;
+
+            _lastFoundFibunacciNumber = LOWEST_FIBUNACCI_NUMBER;
+            SaveLastFibunacciNumber();
+
+            _lastFoundFibunacciNumber = SECOND_TO_LOWEST_FIBUNACCI_NUMBER;
+
+            while (_lastFoundFibunacciNumber <= _upperBound)
+            {
+                SaveLastFibunacciNumber();
+                _lastFoundFibunacciNumber = ComputeNextFibunacciNumber(_lastFoundFibunacciNumber);
+            }
+        }
+
+        private void SaveLastFibunacciNumber()
+        {
+            _fibunacciNumbers.Add(_lastFoundFibunacciNumber);
+            _indexLastFoundFibunacciNumber++;
+        }
+
+        private int ComputeNextFibunacciNumber(int lastFoundFibunacciNumber)
+        {
+            lastFoundFibunacciNumber = _fibunacciNumbers[_indexLastFoundFibunacciNumber - 1] +
+                                       _fibunacciNumbers[_indexLastFoundFibunacciNumber];
+            return lastFoundFibunacciNumber;
         }
     }
 }
