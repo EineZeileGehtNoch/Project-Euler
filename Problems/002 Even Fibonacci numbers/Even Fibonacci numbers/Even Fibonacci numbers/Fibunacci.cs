@@ -42,10 +42,10 @@ namespace Even_Fibonacci_numbers
         private void FillList()
         {
             ComputeAndSaveFirstFibunacciNumber();
-            ComputeAndSaveOtherFibunacciNumbers();
+            ComputeAndSaveOtherFibunacciNumbersIfNeeded();
         }
 
-        private void ComputeAndSaveOtherFibunacciNumbers()
+        private void ComputeAndSaveOtherFibunacciNumbersIfNeeded()
         {
             ComputeSecondFibunacciNumber();
             while (LastFoundFibunacciNumberIsNotTooLarge())
