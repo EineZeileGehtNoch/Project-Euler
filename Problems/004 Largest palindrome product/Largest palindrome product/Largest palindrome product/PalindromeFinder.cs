@@ -8,5 +8,9 @@ namespace Largest_palindrome_product
 {
     static class PalindromeFinder
     {
+        public static int GetLargestPalindromeWhichIsProdukt(int numberOfFactorDigits)
+        {
+            return 1;
+        }
     }
 }
