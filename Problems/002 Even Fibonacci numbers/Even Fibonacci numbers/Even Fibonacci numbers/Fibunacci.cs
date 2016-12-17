@@ -4,43 +4,57 @@ namespace Even_Fibonacci_numbers
 {
     class Fibunacci
     {
-        readonly List<int> _fibunacciNumbers = new List<int>();
-        private int _maximumFibunacciNumber;
+        List<int> _fibunacciNumbers;
+        private int _upperBound;
+        private int _indexLastFoundFibunacciNumber;
 
-        public List<int> GetFibunacciNumbersUpTo(int maximumFibunacciNumber)
+        private static readonly int LOWEST_FIBUNACCI_NUMBER=1;
+        private static readonly int SECOND_TO_LOWEST_FIBUNACCI_NUMBER = 2;
+
+        public List<int> GetFibunacciNumbersUpTo(int upperBound)
         {
-            _maximumFibunacciNumber = maximumFibunacciNumber;
+            _upperBound = upperBound;
 
-            if (UpperBoundNotTooLow())
-            {
-                ComputeFibunacciNumbers();
-            }
+            CreateEmptyList();
+            FillListIfUpperBoundNotTooLow();
 
             return _fibunacciNumbers;
         }
 
-        private static readonly int LOWEST_FIBUNACCI_NUMBER=1;
+        private void CreateEmptyList()
+        {
+            _fibunacciNumbers = new List<int>();
+        }
+
+        private void FillListIfUpperBoundNotTooLow()
+        {
+            if (UpperBoundNotTooLow())
+            {
+                ComputeFibunacciNumbers();
+            }
+        }
 
         private void ComputeFibunacciNumbers()
         {
-            int lastFoundFibunacciNumber = 1;
+            int lastFoundFibunacciNumber = LOWEST_FIBUNACCI_NUMBER;
+
             _fibunacciNumbers.Add(lastFoundFibunacciNumber);
 
-            lastFoundFibunacciNumber = 2;
+            lastFoundFibunacciNumber = SECOND_TO_LOWEST_FIBUNACCI_NUMBER;
 
-            int indexLastFoundFibunacciNumber = 0;
-            while (lastFoundFibunacciNumber <= _maximumFibunacciNumber)
+            _indexLastFoundFibunacciNumber = 0;
+            while (lastFoundFibunacciNumber <= _upperBound)
             {
                 _fibunacciNumbers.Add(lastFoundFibunacciNumber);
-                indexLastFoundFibunacciNumber++;
-                lastFoundFibunacciNumber = _fibunacciNumbers[indexLastFoundFibunacciNumber - 1] +
-                                           _fibunacciNumbers[indexLastFoundFibunacciNumber];
+                _indexLastFoundFibunacciNumber++;
+                lastFoundFibunacciNumber = _fibunacciNumbers[_indexLastFoundFibunacciNumber - 1] +
+                                           _fibunacciNumbers[_indexLastFoundFibunacciNumber];
             }
         }
 
         private bool UpperBoundNotTooLow()
         {
-            return _maximumFibunacciNumber>=LOWEST_FIBUNACCI_NUMBER;
+            return _upperBound>=LOWEST_FIBUNACCI_NUMBER;
         }
     }
 }
