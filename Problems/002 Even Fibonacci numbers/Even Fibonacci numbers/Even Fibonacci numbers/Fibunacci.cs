@@ -6,13 +6,12 @@ namespace Even_Fibonacci_numbers
     {
         public int SumEvenNumbersUpTo(int maximumFibunacciNumber)
         {
-            var fibunacciNumbers = GetNumbersUpTo(maximumFibunacciNumber);
-            var sumEvenFibunacciNumbers = NumberAdder.SumOfEvenNumbers(fibunacciNumbers);
+            var fibunacciNumbers = GetFibunacciNumbersUpTo(maximumFibunacciNumber);
 
-            return sumEvenFibunacciNumbers;
+            return NumberAdder.SumOfEvenNumbers(fibunacciNumbers);
         }
 
-        private List<int> GetNumbersUpTo(int maximumFibunacciNumber)
+        private List<int> GetFibunacciNumbersUpTo(int maximumFibunacciNumber)
         {
             List<int> fibunacciNumbers;
             fibunacciNumbers = new List<int>();
