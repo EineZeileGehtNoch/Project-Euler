@@ -4,14 +4,7 @@ namespace Even_Fibonacci_numbers
 {
     class Fibunacci
     {
-        public int SumEvenNumbersUpTo(int maximumFibunacciNumber)
-        {
-            var fibunacciNumbers = GetFibunacciNumbersUpTo(maximumFibunacciNumber);
-
-            return NumberAdder.SumOfEvenNumbers(fibunacciNumbers);
-        }
-
-        private List<int> GetFibunacciNumbersUpTo(int maximumFibunacciNumber)
+        public List<int> GetFibunacciNumbersUpTo(int maximumFibunacciNumber)
         {
             List<int> fibunacciNumbers;
             fibunacciNumbers = new List<int>();
@@ -27,7 +20,7 @@ namespace Even_Fibonacci_numbers
                 indexLastFoundFibunacciNumber++;
                 lastFoundFibunacciNumber = fibunacciNumbers[indexLastFoundFibunacciNumber - 1] +
                                            fibunacciNumbers[indexLastFoundFibunacciNumber];
-           }
+            }
 
             return fibunacciNumbers;
         }

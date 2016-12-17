@@ -3,16 +3,16 @@
 namespace Even_Fibonacci_numbers.Test
 {
     [TestClass]
-    public class FibunacciTest
+    public class ProblemSolverTest
     {
         [TestMethod]
         public void OnlyTwo()
         {
             int upperBound = 2;
             int expected = 2;
-            Fibunacci fibunacci = new Fibunacci();
+            ProblemSolver problemSolver = new ProblemSolver();
 
-            int actual = fibunacci.SumEvenNumbersUpTo(upperBound);
+            int actual = problemSolver.SumEvenOfEvenFibunacciNumbersUpTo(upperBound);
 
             Assert.AreEqual(expected,actual);
         }

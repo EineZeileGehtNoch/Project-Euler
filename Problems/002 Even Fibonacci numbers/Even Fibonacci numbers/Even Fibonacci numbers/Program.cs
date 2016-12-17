@@ -21,9 +21,9 @@ namespace Even_Fibonacci_numbers
         static void Main(string[] args)
         {
             int maximumFibunacciNumber = 4000000;
-            Fibunacci fibunacci = new Fibunacci();
+            ProblemSolver fibunacci = new ProblemSolver();
 
-            var sumEvenFibunacciNumbers = fibunacci.SumEvenNumbersUpTo(maximumFibunacciNumber);
+            var sumEvenFibunacciNumbers = fibunacci.SumEvenOfEvenFibunacciNumbersUpTo(maximumFibunacciNumber);
 
             Console.WriteLine("Sum: " + sumEvenFibunacciNumbers);
             Console.ReadKey();

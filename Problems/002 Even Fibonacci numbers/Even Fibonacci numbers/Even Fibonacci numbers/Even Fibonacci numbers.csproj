@@ -43,10 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Fibunacci.cs" />
+    <Compile Include="ProblemSolver.cs" />
     <Compile Include="NumberAdder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test\FibunacciTest.cs" />
+    <Compile Include="Test\ProblemSolverTest.cs" />
     <Compile Include="Test\NumberAdderTest.cs" />
   </ItemGroup>
   <ItemGroup>
