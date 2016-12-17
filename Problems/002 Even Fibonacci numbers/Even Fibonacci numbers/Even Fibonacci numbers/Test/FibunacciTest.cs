@@ -33,5 +33,17 @@ namespace Even_Fibonacci_numbers.Test
 
             CollectionAssert.AreEqual(expected,actual);
         }
+
+        [TestMethod]
+        public void NoFibunacciNumber()
+        {
+            int upperBound = 0;
+            Fibunacci fibunacci = new Fibunacci();
+            List<int> expected = new List<int>();
+
+            List<int> actual = fibunacci.GetFibunacciNumbersUpTo(upperBound);
+
+            CollectionAssert.AreEqual(expected,actual);
+        }
     }
 }
