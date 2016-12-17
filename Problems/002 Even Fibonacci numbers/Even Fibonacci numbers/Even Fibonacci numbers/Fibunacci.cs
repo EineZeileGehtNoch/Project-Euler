@@ -6,13 +6,10 @@ namespace Even_Fibonacci_numbers
     {
         List<int> _fibunacciNumbers;
         private int _upperBound;
-        private int _indexLastFoundFibunacciNumber;
         private int _lastFoundFibunacciNumber;
-
 
         private static readonly int LOWEST_FIBUNACCI_NUMBER = 1;
         private static readonly int SECOND_TO_LOWEST_FIBUNACCI_NUMBER = 2;
-        private static readonly int INDEX_WITHOUT_FIBUNACCI_NUMBERS_FOUND = -1;
 
         public List<int> GetFibunacciNumbersUpTo(int upperBound)
         {
@@ -44,12 +41,13 @@ namespace Even_Fibonacci_numbers
 
         private void FillList()
         {
-            SetDefaultIndex();
-
             ComputeAndSaveFirstFibunacciNumber();
+            ComputeAndSaveOtherFibunacciNumbers();
+        }
 
+        private void ComputeAndSaveOtherFibunacciNumbers()
+        {
             ComputeSecondFibunacciNumber();
-
             while (LastFoundFibunacciNumberIsNotTooLarge())
             {
                 SaveLastComputedFibunacciNumber();
@@ -68,11 +66,6 @@ namespace Even_Fibonacci_numbers
             SaveLastComputedFibunacciNumber();
         }
 
-        private void SetDefaultIndex()
-        {
-            _indexLastFoundFibunacciNumber = INDEX_WITHOUT_FIBUNACCI_NUMBERS_FOUND;
-        }
-
         private bool LastFoundFibunacciNumberIsNotTooLarge()
         {
             return _lastFoundFibunacciNumber <= _upperBound;
@@ -81,13 +74,14 @@ namespace Even_Fibonacci_numbers
         private void SaveLastComputedFibunacciNumber()
         {
             _fibunacciNumbers.Add(_lastFoundFibunacciNumber);
-            _indexLastFoundFibunacciNumber++;
         }
 
         private void ComputeNextFibunacciNumber()
         {
-            _lastFoundFibunacciNumber = _fibunacciNumbers[_indexLastFoundFibunacciNumber - 1] +
-                                       _fibunacciNumbers[_indexLastFoundFibunacciNumber];
+            int lastIndex = _fibunacciNumbers.Count;
+
+            _lastFoundFibunacciNumber = _fibunacciNumbers[lastIndex - 2] +
+                                        _fibunacciNumbers[lastIndex - 1];
         }
     }
 }
