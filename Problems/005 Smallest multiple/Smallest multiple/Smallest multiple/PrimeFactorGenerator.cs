@@ -7,9 +7,18 @@ namespace Smallest_multiple
 {
     class PrimeFactorGenerator
     {
-        List<int> GetNumberOfPrimeFactors()
+        private static List<int> _primeFactors;
+
+        public static List<int> GetNumberOfPrimeFactors(int number)
         {
-            return null;
+            CreateEmptyPrimeFactors();
+
+            return _primeFactors;
+        }
+
+        private static void CreateEmptyPrimeFactors()
+        {
+            _primeFactors = new List<int>();
         }
     }
 }
