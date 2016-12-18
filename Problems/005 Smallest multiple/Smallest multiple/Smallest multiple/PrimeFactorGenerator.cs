@@ -17,8 +17,34 @@ namespace Smallest_multiple
             CreateNewPrimeNumberSource();
             CreateEmptyPrimeFactors();
 
+            CountPrimeFactors();
 
             return _numberOfPrimeFactors;
+        }
+
+        private static void CountPrimeFactors()
+        {
+            while (PrimeFactorsLeftInNumber())
+            {
+                int prime = _primeGenerator.GetFirstOrNextPrime();
+
+                CountHowOftenDivisibleBy(prime);
+            }
+        }
+
+        private static void CountHowOftenDivisibleBy(int prime)
+        {
+            _numberOfPrimeFactors.Add(0);
+            if (_number%prime == 0)
+            {
+                _number /= prime;
+                _numberOfPrimeFactors[_numberOfPrimeFactors.Count - 1]++;
+            }
+        }
+
+        private static bool PrimeFactorsLeftInNumber()
+        {
+            return _number>1;
         }
 
         private static void CreateNewPrimeNumberSource()
