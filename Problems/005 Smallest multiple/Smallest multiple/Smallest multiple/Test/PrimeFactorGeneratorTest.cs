@@ -15,7 +15,7 @@ namespace Smallest_multiple.Test
             int number = 1;
             List<int> expected = new List<int>();
 
-            List<int> actual = PrimeFactorGenerator.GetNumberOfPrimeFactors();
+            List<int> actual = PrimeFactorGenerator.GetNumberOfPrimeFactors(number);
 
             CollectionAssert.AreEqual(expected,actual);
         }
