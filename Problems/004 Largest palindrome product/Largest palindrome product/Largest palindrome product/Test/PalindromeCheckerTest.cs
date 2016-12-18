@@ -3,7 +3,7 @@
 namespace Largest_palindrome_product.Test
 {
     [TestClass]
-    public class PalindromeTest
+    public class PalindromeCheckerTest
     {
 
         [TestMethod]
@@ -11,7 +11,7 @@ namespace Largest_palindrome_product.Test
         {
             int number = 1;
 
-            bool actual = Palindrome.NumberIsPalindrome(number);
+            bool actual = PalindromeChecker.NumberIsPalindrome(number);
 
             Assert.AreEqual(true,actual);
         }
@@ -21,7 +21,7 @@ namespace Largest_palindrome_product.Test
         {
             int number = 12;
 
-            bool actual = Palindrome.NumberIsPalindrome(number);
+            bool actual = PalindromeChecker.NumberIsPalindrome(number);
 
             Assert.AreEqual(false,actual);
         }
