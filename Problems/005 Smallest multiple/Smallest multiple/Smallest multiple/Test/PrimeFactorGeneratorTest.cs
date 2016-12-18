@@ -19,5 +19,16 @@ namespace Smallest_multiple.Test
 
             CollectionAssert.AreEqual(expected,actual);
         }
+
+        [TestMethod]
+        public void OnePrimeFactor()
+        {
+            int number = 2;
+            List<int> expected = new List<int>{1};
+
+            List<int> actual = PrimeFactorGenerator.GetNumberOfPrimeFactors(number);
+
+            CollectionAssert.AreEqual(expected,actual);
+        }
     }
 }
