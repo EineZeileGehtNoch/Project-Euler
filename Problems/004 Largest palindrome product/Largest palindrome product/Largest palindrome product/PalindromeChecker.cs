@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Largest_palindrome_product
 {
-    static class Palindrome
+    static class PalindromeChecker
     {
         private static int _number;
 
