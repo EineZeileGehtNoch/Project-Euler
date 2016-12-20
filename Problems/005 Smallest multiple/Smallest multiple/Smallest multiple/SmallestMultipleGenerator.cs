@@ -10,6 +10,8 @@ namespace Smallest_multiple
         private static List<int> _numbers;
         private static List<List<int>> _numberOfPrimesFactorsOfNumbers;
         private static List<int> _smallesMultiplNumberOfPrimeFactors;
+        private static PrimeGenerator _primeGenerator;
+        private static int _smallestMultiple;
 
         public static int GetSmallestMultipleOf(List<int> numbers)
         {
@@ -30,19 +32,32 @@ namespace Smallest_multiple
                 {
                 AddPrimeFactor();
                 }
-                foreach (List<int> primesFactorsOfNumber in _numberOfPrimesFactorsOfNumbers)
+            }
+
+            foreach (List<int> primesFactorsOfNumber in _numberOfPrimesFactorsOfNumbers)
+            {
+                for (int primeIndex = 0; primeIndex < primesFactorsOfNumber.Count; primeIndex++)
                 {
-                    for (int primeIndex = 0; primeIndex < primesFactorsOfNumber.Count; primeIndex++)
+                    if (_smallesMultiplNumberOfPrimeFactors[primeIndex]<primesFactorsOfNumber[primeIndex])
                     {
-                        if (_smallesMultiplNumberOfPrimeFactors[primeIndex]<primesFactorsOfNumber[primeIndex])
-                        {
-                            _smallesMultiplNumberOfPrimeFactors[primeIndex] = primesFactorsOfNumber[primeIndex];
-                        }
+                        _smallesMultiplNumberOfPrimeFactors[primeIndex] = primesFactorsOfNumber[primeIndex];
                     }
                 }
             }
 
-            return 1;
+            _primeGenerator = new PrimeGenerator();
+            _smallestMultiple = 1;
+
+            foreach (int potencyOfPrimeFactor in _smallesMultiplNumberOfPrimeFactors)
+            {
+                int prime = _primeGenerator.GetFirstOrNextPrime();
+                for (int i = 0; i < potencyOfPrimeFactor; i++)
+                {
+                    _smallestMultiple *= prime;
+                }
+            }
+            
+            return _smallestMultiple;
         }
 
         private static void AddPrimeFactor()
