@@ -23,8 +23,8 @@ namespace Smallest_multiple.Test
         [TestMethod]
         public void SmallestMultipleOfPrimes()
         {
-            List<int> numbers = new List<int> {2, 3};
-            int expected = 2*3;
+            List<int> numbers = new List<int> {2, 3, 5};
+            int expected = 2*3*5;
 
             int actual = SmallestMultipleGenerator.GetSmallestMultipleOf(numbers);
 
