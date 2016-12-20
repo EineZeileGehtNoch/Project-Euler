@@ -49,8 +49,10 @@
     <Compile Include="PrimeFactorGenerator.cs" />
     <Compile Include="PrimeGenerator.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="LeastCommonMultipleGenerator.cs" />
     <Compile Include="Test\PrimeFactorGeneratorTest.cs" />
     <Compile Include="Test\PrimeGeneratorTest.cs" />
+    <Compile Include="Test\LeastCommonMultipleGeneratorTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
