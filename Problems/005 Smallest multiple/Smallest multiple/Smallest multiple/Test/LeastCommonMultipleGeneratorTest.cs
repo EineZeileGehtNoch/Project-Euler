@@ -24,8 +24,19 @@ namespace Smallest_multiple.Test
         [TestMethod]
         public void SmallestMultipleOfPrimes()
         {
-            List<int> numbers = new List<int> {2, 3, 5};
-            int expected = 2*3*5;
+            List<int> numbers = new List<int> { 2, 3, 5 };
+            int expected = 2 * 3 * 5;
+
+            int actual = LeastCommonMultipleGenerator.GetLCMOf(numbers);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void LeastCommonMultipleOfNonPrime()
+        {
+            List<int> numbers = new List<int> {4};
+            int expected = 4;
 
             int actual = LeastCommonMultipleGenerator.GetLCMOf(numbers);
 
@@ -35,12 +46,12 @@ namespace Smallest_multiple.Test
         [TestMethod]
         public void BigLeastCommonMultiple()
         {
-            List<int> numbers = new List<int> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+            List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             int expected = 2520;
 
             int actual = LeastCommonMultipleGenerator.GetLCMOf(numbers);
 
-            Assert.AreEqual(expected,actual);
+            Assert.AreEqual(expected, actual);
         }
     }
 }
