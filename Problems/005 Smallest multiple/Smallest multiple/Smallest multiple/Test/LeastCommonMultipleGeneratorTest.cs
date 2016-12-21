@@ -33,14 +33,25 @@ namespace Smallest_multiple.Test
         }
 
         [TestMethod]
-        public void LeastCommonMultipleOfNonPrime()
+        public void LeastCommonMultipleOfSameNumber()
         {
-            List<int> numbers = new List<int> {4};
-            int expected = 4;
+            List<int> numbers = new List<int> {2, 2};
+            int expected = 2;
 
             int actual = LeastCommonMultipleGenerator.GetLCMOf(numbers);
 
             Assert.AreEqual(expected,actual);
+        }
+
+        [TestMethod]
+        public void LeastCommonMultipleOfNonPrime()
+        {
+            List<int> numbers = new List<int> { 4 };
+            int expected = 4;
+
+            int actual = LeastCommonMultipleGenerator.GetLCMOf(numbers);
+
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
