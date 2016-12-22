@@ -14,12 +14,17 @@ namespace Smallest_multiple
         public static List<int> GetNumberOfPrimeFactors(int number)
         {
             SafeInput(number);
-            CreateNewPrimeNumberSource();
-            CreateEmptyPrimeFactors();
 
-            CountPrimeFactors();
+            ComputePrimeFactors();
 
             return _numberOfPrimeFactors;
+        }
+
+        private static void ComputePrimeFactors()
+        {
+            CreateNewPrimeNumberSource();
+            CreateEmptyPrimeFactors();
+            CountPrimeFactors();
         }
 
         private static void CountPrimeFactors()
@@ -35,11 +40,26 @@ namespace Smallest_multiple
         private static void CountHowOftenDivisibleBy(int prime)
         {
             _numberOfPrimeFactors.Add(0);
-            if (_number%prime == 0)
-            {
-                _number /= prime;
-                _numberOfPrimeFactors[_numberOfPrimeFactors.Count - 1]++;
-            }
+           while (NumberIsDivisibleBy(prime))
+           {
+               DiviseNumberBy(prime);
+               IncreasePrimeFactorCounter();
+           }
+        }
+
+        private static void IncreasePrimeFactorCounter()
+        {
+            _numberOfPrimeFactors[_numberOfPrimeFactors.Count - 1]++;
+        }
+
+        private static void DiviseNumberBy(int prime)
+        {
+            _number /= prime;
+        }
+
+        private static bool NumberIsDivisibleBy(int prime)
+        {
+            return _number%prime == 0;
         }
 
         private static bool PrimeFactorsLeftInNumber()
