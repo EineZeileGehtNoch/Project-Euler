@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,17 @@ namespace Smallest_multiple
     {
         static void Main(string[] args)
         {
+            List<int> numbers = new List<int>();
+            for (int number = 1; number <= 20; number++)
+            {
+                numbers.Add(number);
+            }
+
+            int leastCommonMultiple = LeastCommonMultipleGenerator.GetLcmOf(numbers);
+
+
+            Console.WriteLine(leastCommonMultiple);
+            Console.ReadKey();
         }
     }
 }

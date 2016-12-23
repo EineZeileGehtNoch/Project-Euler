@@ -14,8 +14,7 @@ namespace Smallest_multiple
         private static PrimeGenerator _primeGenerator;
         private static int _smallestMultiple;
 
-        // ReSharper disable once InconsistentNaming
-        public static int GetLCMOf(List<int> numbers)
+        public static int GetLcmOf(List<int> numbers)
         {
             SaveNumbers(numbers);
 
@@ -108,7 +107,7 @@ namespace Smallest_multiple
 
         private static bool PrimeFactorsNeedToBeAdded(List<int> numberOfPrimesFactorsOfNumber)
         {
-            return numberOfPrimesFactorsOfNumber.Count>_smallesMultiplNumberOfPrimeFactors.Count;
+            return _smallesMultiplNumberOfPrimeFactors.Count < numberOfPrimesFactorsOfNumber.Count;
         }
 
         private static void SaveNumbers(List<int> numbers)

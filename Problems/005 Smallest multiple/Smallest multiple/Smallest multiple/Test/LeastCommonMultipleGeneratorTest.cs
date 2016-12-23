@@ -16,7 +16,7 @@ namespace Smallest_multiple.Test
             List<int> numbers = new List<int> {1};
             int expected = 1;
 
-            int actual = LeastCommonMultipleGenerator.GetLCMOf(numbers);
+            int actual = LeastCommonMultipleGenerator.GetLcmOf(numbers);
 
             Assert.AreEqual(expected, actual);
         }
@@ -27,18 +27,18 @@ namespace Smallest_multiple.Test
             List<int> numbers = new List<int> { 2, 3, 5 };
             int expected = 2 * 3 * 5;
 
-            int actual = LeastCommonMultipleGenerator.GetLCMOf(numbers);
+            int actual = LeastCommonMultipleGenerator.GetLcmOf(numbers);
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void LeastCommonMultipleOfSameNumber()
+        public void LeastCommonMultipleOfSamePrime()
         {
             List<int> numbers = new List<int> {2, 2};
             int expected = 2;
 
-            int actual = LeastCommonMultipleGenerator.GetLCMOf(numbers);
+            int actual = LeastCommonMultipleGenerator.GetLcmOf(numbers);
 
             Assert.AreEqual(expected,actual);
         }
@@ -49,7 +49,7 @@ namespace Smallest_multiple.Test
             List<int> numbers = new List<int> { 4 };
             int expected = 4;
 
-            int actual = LeastCommonMultipleGenerator.GetLCMOf(numbers);
+            int actual = LeastCommonMultipleGenerator.GetLcmOf(numbers);
 
             Assert.AreEqual(expected, actual);
         }
@@ -60,7 +60,7 @@ namespace Smallest_multiple.Test
             List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             int expected = 2520;
 
-            int actual = LeastCommonMultipleGenerator.GetLCMOf(numbers);
+            int actual = LeastCommonMultipleGenerator.GetLcmOf(numbers);
 
             Assert.AreEqual(expected, actual);
         }
