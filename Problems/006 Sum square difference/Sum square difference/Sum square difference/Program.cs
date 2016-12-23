@@ -26,22 +26,9 @@ namespace Sum_square_difference
     {
         static void Main(string[] args)
         {
-            int upTo = 100;
+            int upperBound = 100;
 
-            int sumFirstSquareThenSum = 0;
-            for (int number = 1; number <= upTo; number++)
-            {
-                sumFirstSquareThenSum += number*number;
-            }
-
-            int sumFirstSumThenSquare = 0;
-            for (int number = 1; number <= upTo; number++)
-            {
-                sumFirstSumThenSquare += number;
-            }
-            sumFirstSumThenSquare = sumFirstSumThenSquare*sumFirstSumThenSquare;
-
-            int difference = sumFirstSumThenSquare - sumFirstSquareThenSum;
+            var difference = SumAndSquare.DifferenceBetweenDifferentOrder(upperBound);
 
             Console.WriteLine(difference);
             Console.ReadKey();
