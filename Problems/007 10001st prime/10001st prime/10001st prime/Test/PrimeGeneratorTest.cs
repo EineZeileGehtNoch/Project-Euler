@@ -11,5 +11,15 @@ namespace _10001st_prime.Test
     [TestClass]
     public class PrimeGeneratorTest
     {
+        [TestMethod]
+        public void SmallestPrime()
+        {
+            int numberOfPrime = 1;
+            int expected = 2;
+
+            int actual = PrimeGenerator.GetNthPrime(numberOfPrime);
+
+            Assert.AreEqual(expected,actual);
+        }
     }
 }
