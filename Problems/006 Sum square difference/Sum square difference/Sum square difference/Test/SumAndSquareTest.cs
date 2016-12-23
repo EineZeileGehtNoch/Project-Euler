@@ -20,5 +20,16 @@ namespace Sum_square_difference.Test
 
             Assert.AreEqual(expected,actual);
         }
+
+        [TestMethod]
+        public void UpToTenDifference()
+        {
+            int upperBound = 10;
+            int expected = 2640;
+
+            int actual = SumAndSquare.DifferenceBetweenDifferentOrder(upperBound);
+
+            Assert.AreEqual(expected,actual);
+        }
     }
 }
