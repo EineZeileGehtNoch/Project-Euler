@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 //Problem 6
 
 //The sum of the squares of the first ten natural numbers is,
-//12 + 22 + ... + 102 = 385
+//1^2 + 2^2 + ... + 10^2 = 385
 
 //The square of the sum of the first ten natural numbers is,
-//(1 + 2 + ... + 10)2 = 552 = 3025
+//(1 + 2 + ... + 10)^2 = 552 = 3025
 
 //Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.
 
@@ -26,6 +26,25 @@ namespace Sum_square_difference
     {
         static void Main(string[] args)
         {
+            int upTo = 100;
+
+            int sumFirstSquareThenSum = 0;
+            for (int number = 1; number <= upTo; number++)
+            {
+                sumFirstSquareThenSum += number*number;
+            }
+
+            int sumFirstSumThenSquare = 0;
+            for (int number = 1; number <= upTo; number++)
+            {
+                sumFirstSumThenSquare += number;
+            }
+            sumFirstSumThenSquare = sumFirstSumThenSquare*sumFirstSumThenSquare;
+
+            int difference = sumFirstSumThenSquare - sumFirstSquareThenSum;
+
+            Console.WriteLine(difference);
+            Console.ReadKey();
         }
     }
 }
