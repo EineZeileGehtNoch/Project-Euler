@@ -21,5 +21,16 @@ namespace _10001st_prime.Test
 
             Assert.AreEqual(expected,actual);
         }
+
+        [TestMethod]
+        public void SomePrime()
+        {
+            int numberOfPrime = 6;
+            int expected = 13;
+
+            int actual = PrimeGenerator.GetNthPrime(numberOfPrime);
+
+            Assert.AreEqual(expected,actual);
+        }
     }
 }
