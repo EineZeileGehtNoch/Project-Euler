@@ -20,6 +20,15 @@ namespace _10001st_prime
     {
         static void Main(string[] args)
         {
+
+            int numberOfPrime = 10001;
+
+            int prime = PrimeGenerator.GetNthPrime(numberOfPrime);
+
+            Console.WriteLine(prime);
+            Console.ReadKey();
         }
     }
+
+    
 }
