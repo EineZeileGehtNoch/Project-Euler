@@ -9,7 +9,17 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Largest_product_in_a_series.Test
 {
     [TestClass]
- public    class MagicStringUserTest
+    public class MagicStringUserTest
     {
+        [TestMethod]
+        public void SingleDigit()
+        {
+            int numberOfDigits = 1;
+            int expected = 9;
+
+            int actual = MagicStringUser.GetBiggestFactor(numberOfDigits);
+            
+            Assert.AreEqual(expected,actual);
+        }
     }
 }
