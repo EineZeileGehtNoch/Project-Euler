@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace Largest_product_in_a_series
 {
@@ -11,13 +12,13 @@ namespace Largest_product_in_a_series
 
         private static Queue<int> _digits;
         private static List<int> _factors;
-        private static int _biggestProduct;
+        private static BigInteger _biggestProduct;
 
-        private static int _candidateForBiggestProduct;
+        private static BigInteger _candidateForBiggestProduct;
 
         private static string _tempString;
 
-        public static int GetBiggestProductOfAdjacentDigits(int numberOfDigits)
+        public static BigInteger GetBiggestProductOfAdjacentDigits(int numberOfDigits)
         {
             UseDefaultString();
 
@@ -26,7 +27,7 @@ namespace Largest_product_in_a_series
             return GetBiggestFoundProduct();
         }
 
-        public static int GetBiggestProductOfAdjacentDigits(string magicString, int numberOfDigits)
+        public static BigInteger GetBiggestProductOfAdjacentDigits(string magicString, int numberOfDigits)
         {
             UseThisAsMagicString(magicString);
 
@@ -109,7 +110,7 @@ namespace Largest_product_in_a_series
             AddFactorsToCandidate();
         }
 
-        private static int GetBiggestFoundProduct()
+        private static BigInteger GetBiggestFoundProduct()
         {
             return _biggestProduct;
         }

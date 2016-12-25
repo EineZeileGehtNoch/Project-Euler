@@ -1,4 +1,5 @@
-﻿using System.Security;
+﻿using System.Numerics;
+using System.Security;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Largest_product_in_a_series.Test
@@ -12,7 +13,7 @@ namespace Largest_product_in_a_series.Test
             int numberOfDigits = 1;
             int expected = 9;
 
-            int actual = MagicStringUser.GetBiggestProductOfAdjacentDigits(numberOfDigits);
+            BigInteger actual = MagicStringUser.GetBiggestProductOfAdjacentDigits(numberOfDigits);
 
             Assert.AreEqual(expected, actual);
         }
@@ -23,7 +24,7 @@ namespace Largest_product_in_a_series.Test
             int numberOfDigits = 4;
             int expected = 5832;
 
-            int actual = MagicStringUser.GetBiggestProductOfAdjacentDigits(numberOfDigits);
+            BigInteger actual = MagicStringUser.GetBiggestProductOfAdjacentDigits(numberOfDigits);
 
             Assert.AreEqual(expected, actual);
         }
@@ -35,7 +36,7 @@ namespace Largest_product_in_a_series.Test
             int numberOfDigits = 2;
             int expected = 7*8;
 
-            int actual = MagicStringUser.GetBiggestProductOfAdjacentDigits(magicString, numberOfDigits);
+            BigInteger actual = MagicStringUser.GetBiggestProductOfAdjacentDigits(magicString, numberOfDigits);
 
             Assert.AreEqual(expected, actual);
         }
@@ -47,7 +48,7 @@ namespace Largest_product_in_a_series.Test
             int numberOfDigits = 2;
             int expected = 8*7;
 
-            int actual = MagicStringUser.GetBiggestProductOfAdjacentDigits(magicString, numberOfDigits);
+            BigInteger actual = MagicStringUser.GetBiggestProductOfAdjacentDigits(magicString, numberOfDigits);
 
             Assert.AreEqual(expected,actual);
         }

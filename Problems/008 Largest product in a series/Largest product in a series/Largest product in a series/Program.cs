@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 
 //https://projecteuler.net/problem=8
 
@@ -39,7 +40,7 @@ namespace Largest_product_in_a_series
         {
             int numberOfDigits = 13;
 
-            int biggestProduct = MagicStringUser.GetBiggestProductOfAdjacentDigits(numberOfDigits);
+            BigInteger biggestProduct = MagicStringUser.GetBiggestProductOfAdjacentDigits(numberOfDigits);
 
             Console.WriteLine(biggestProduct);
             Console.ReadKey();
