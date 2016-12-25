@@ -38,7 +38,7 @@ namespace Largest_product_in_a_series
     {
         static void Main(string[] args)
         {
-            int numberOfDigits = 13;
+            const int numberOfDigits = 13;
 
             BigInteger biggestProduct = MagicStringUser.GetBiggestProductOfAdjacentDigits(numberOfDigits);
 
