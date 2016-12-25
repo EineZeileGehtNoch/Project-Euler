@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Special Pythagorean triplet", "Special Pythagorean triplet\Special Pythagorean triplet.csproj", "{AFA6A8CC-C0B9-4837-9AB3-F58F6E1942DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFA6A8CC-C0B9-4837-9AB3-F58F6E1942DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFA6A8CC-C0B9-4837-9AB3-F58F6E1942DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFA6A8CC-C0B9-4837-9AB3-F58F6E1942DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFA6A8CC-C0B9-4837-9AB3-F58F6E1942DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
