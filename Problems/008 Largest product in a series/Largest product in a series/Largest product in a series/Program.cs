@@ -41,6 +41,12 @@ namespace Largest_product_in_a_series
     {
         static void Main(string[] args)
         {
+            int numberOfDigits = 13;
+
+            int biggestProduct = MagicStringUser.GetBiggestFactor(numberOfDigits);
+
+            Console.WriteLine(biggestProduct);
+            Console.ReadKey();
         }
     }
 }
