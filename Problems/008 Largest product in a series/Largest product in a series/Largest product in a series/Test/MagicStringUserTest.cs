@@ -17,7 +17,7 @@ namespace Largest_product_in_a_series.Test
             int numberOfDigits = 1;
             int expected = 9;
 
-            int actual = MagicStringUser.GetBiggestFactor(numberOfDigits);
+            int actual = MagicStringUser.GetBiggestProduct(numberOfDigits);
             
             Assert.AreEqual(expected,actual);
         }
