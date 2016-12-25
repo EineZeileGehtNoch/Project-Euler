@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.VisualStudio.QualityTools.UnitTestFramework;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Largest_product_in_a_series.Test
 {
@@ -17,7 +11,7 @@ namespace Largest_product_in_a_series.Test
             int numberOfDigits = 1;
             int expected = 9;
 
-            int actual = MagicStringUser.GetBiggestProduct(numberOfDigits);
+            int actual = MagicStringUser.GetBiggestProductOfAdjacentDigits(numberOfDigits);
             
             Assert.AreEqual(expected,actual);
         }
@@ -28,7 +22,7 @@ namespace Largest_product_in_a_series.Test
             int numberOfDigits = 4;
             int expected = 5832;
 
-            int actual = MagicStringUser.GetBiggestProduct(numberOfDigits);
+            int actual = MagicStringUser.GetBiggestProductOfAdjacentDigits(numberOfDigits);
 
             Assert.AreEqual(expected,actual);
         }

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Largest_product_in_a_series
 {
@@ -17,7 +14,7 @@ namespace Largest_product_in_a_series
         private static int _biggestProduct;
         private static int _candidateForBiggestProduct;
 
-        public static int GetBiggestProduct(int numberOfDigits)
+        public static int GetBiggestProductOfAdjacentDigits(int numberOfDigits)
         {
             CreateDigitList();
 
