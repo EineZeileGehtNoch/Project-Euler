@@ -21,5 +21,16 @@ namespace Largest_product_in_a_series.Test
             
             Assert.AreEqual(expected,actual);
         }
+
+        [TestMethod]
+        public void QuadroDigit()
+        {
+            int numberOfDigits = 4;
+            int expected = 5832;
+
+            int actual = MagicStringUser.GetBiggestProduct(numberOfDigits);
+
+            Assert.AreEqual(expected,actual);
+        }
     }
 }
