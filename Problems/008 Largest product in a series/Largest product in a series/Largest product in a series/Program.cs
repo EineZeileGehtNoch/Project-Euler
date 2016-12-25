@@ -43,7 +43,7 @@ namespace Largest_product_in_a_series
         {
             int numberOfDigits = 13;
 
-            int biggestProduct = MagicStringUser.GetBiggestProduct(numberOfDigits);
+            int biggestProduct = MagicStringUser.GetBiggestProductOfAdjacentDigits(numberOfDigits);
 
             Console.WriteLine(biggestProduct);
             Console.ReadKey();
