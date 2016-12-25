@@ -26,5 +26,17 @@ namespace Largest_product_in_a_series.Test
 
             Assert.AreEqual(expected,actual);
         }
+
+        [TestMethod]
+        public void BeginningOfString()
+        {
+            string magicString = "9911";
+            int numberOfDigits = 2;
+            int expected = 81;
+
+            int actual = MagicStringUser.GetBiggestProductOfAdjacentDigits(magicString, numberOfDigits);
+
+            Assert.AreEqual(expected,actual);
+        }
     }
 }
