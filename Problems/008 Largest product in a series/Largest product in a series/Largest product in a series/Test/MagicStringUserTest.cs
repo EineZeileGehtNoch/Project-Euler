@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Security;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Largest_product_in_a_series.Test
 {
@@ -12,8 +13,8 @@ namespace Largest_product_in_a_series.Test
             int expected = 9;
 
             int actual = MagicStringUser.GetBiggestProductOfAdjacentDigits(numberOfDigits);
-            
-            Assert.AreEqual(expected,actual);
+
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -24,15 +25,27 @@ namespace Largest_product_in_a_series.Test
 
             int actual = MagicStringUser.GetBiggestProductOfAdjacentDigits(numberOfDigits);
 
-            Assert.AreEqual(expected,actual);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void BeginningOfString()
         {
-            string magicString = "9911";
+            string magicString = "7819";
             int numberOfDigits = 2;
-            int expected = 81;
+            int expected = 7*8;
+
+            int actual = MagicStringUser.GetBiggestProductOfAdjacentDigits(magicString, numberOfDigits);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void EndOfString()
+        {
+            string magicString = "9187";
+            int numberOfDigits = 2;
+            int expected = 8*7;
 
             int actual = MagicStringUser.GetBiggestProductOfAdjacentDigits(magicString, numberOfDigits);
 

@@ -12,22 +12,46 @@ namespace Largest_product_in_a_series
         private static Queue<int> _digits;
         private static List<int> _factors;
         private static int _biggestProduct;
+
         private static int _candidateForBiggestProduct;
+
+        private static string _tempString;
 
         public static int GetBiggestProductOfAdjacentDigits(int numberOfDigits)
         {
-            CreateDigitList();
+            UseDefaultString();
 
             FindBiggestProduct(numberOfDigits);
 
             return GetBiggestFoundProduct();
         }
 
+        public static int GetBiggestProductOfAdjacentDigits(string magicString, int numberOfDigits)
+        {
+            UseThisAsMagicString(magicString);
+
+            FindBiggestProduct(numberOfDigits);
+            
+            return GetBiggestFoundProduct();
+        }
+
         private static void FindBiggestProduct(int numberOfDigits)
         {
+            CreateDigitList();
+
             SetBiggestProductOnDefault();
 
             ComputeAllPossibleProducts(numberOfDigits);
+        }
+
+        private static void UseThisAsMagicString(string magicString)
+        {
+            _tempString = magicString;
+        }
+
+        private static void UseDefaultString()
+        {
+            _tempString = MAGIC_STRING;
         }
 
         private static void ComputeAllPossibleProducts(int numberOfDigits)
@@ -160,9 +184,9 @@ namespace Largest_product_in_a_series
 
         private static void FillDigitList()
         {
-            for (int i = 0; i < MAGIC_STRING.Length; i++)
+            for (int i = 0; i < _tempString.Length; i++)
             {
-                _digits.Enqueue(Int16.Parse(MAGIC_STRING[i].ToString()));
+                _digits.Enqueue(Int16.Parse(_tempString[i].ToString()));
             }
         }
 
