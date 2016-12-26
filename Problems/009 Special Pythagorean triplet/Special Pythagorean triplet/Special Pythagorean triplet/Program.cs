@@ -24,6 +24,13 @@ namespace Special_Pythagorean_triplet
     {
         static void Main(string[] args)
         {
+            int sum = 1000;
+
+            Triplet abc = Special_Pythagorean_triplet.GetSmallestTripletWithSumOf(sum);
+            int product = abc.A*abc.B*abc.C;
+
+            Console.WriteLine(product);
+            Console.ReadKey();
         }
     }
 }
