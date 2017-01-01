@@ -27,7 +27,7 @@ namespace Special_Pythagorean_triplet
             int sum = 1000;
 
             Triplet abc = Pythagorean.GetSmallestTripletWithSumOf(sum);
-            int product = abc.A*abc.B*abc.C;
+            int product =abc.GetProduct();
 
             Console.WriteLine(product);
             Console.ReadKey();
