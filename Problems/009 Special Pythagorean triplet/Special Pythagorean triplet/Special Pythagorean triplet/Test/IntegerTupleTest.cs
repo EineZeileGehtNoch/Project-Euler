@@ -16,7 +16,7 @@ namespace Special_Pythagorean_triplet.Test
         {
             List<int> integers = new List<int>();
             IntegerTuple integerTuple = new IntegerTuple(integers);
-            int expected = 0;
+            int expected = 1;
 
             int actual = integerTuple.GetProduct();
 
