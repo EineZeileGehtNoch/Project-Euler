@@ -15,12 +15,25 @@ namespace Special_Pythagorean_triplet.Test
         public void ProductEmptyTuple()
         {
             List<int> integers = new List<int>();
-            IntegerTuple integegTuple = new IntegerTuple(integers);
+            IntegerTuple integerTuple = new IntegerTuple(integers);
             int expected = 0;
 
-            int actual = integegTuple.GetProduct();
+            int actual = integerTuple.GetProduct();
+
+            Assert.AreEqual(expected,actual);
+        }
+
+        [TestMethod]
+        public void ProductSingleTuple()
+        {
+            List<int> integers = new List<int>{1};
+            IntegerTuple integerTuple = new IntegerTuple(integers);
+            int expected = 1;
+
+            int actual = integerTuple.GetProduct();
 
             Assert.AreEqual(expected,actual);
         }
     }
+
 }
