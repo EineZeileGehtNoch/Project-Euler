@@ -8,5 +8,11 @@ namespace Special_Pythagorean_triplet
 {
     class IntegerTuple
     {
+        public int GetProduct()
+        {
+            return 0;
+        }
+
     }
+
 }
