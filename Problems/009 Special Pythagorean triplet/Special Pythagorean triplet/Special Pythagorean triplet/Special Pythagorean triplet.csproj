@@ -45,6 +45,7 @@
     <Compile Include="IntegerTuple.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pythagorean.cs" />
     <Compile Include="Test\IntegerTupleTest.cs" />
   </ItemGroup>
   <ItemGroup>
