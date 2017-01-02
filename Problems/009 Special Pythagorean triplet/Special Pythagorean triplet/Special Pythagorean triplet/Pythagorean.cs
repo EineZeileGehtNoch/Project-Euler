@@ -8,7 +8,7 @@ namespace Special_Pythagorean_triplet
 {
     class Pythagorean
     {
-        public IntegerTuple GetSmallestTripletWithSumOf(int sum)
+        public static IntegerTuple GetSmallestTripletWithSumOf(int sum)
         {
             return null;
         }
