@@ -25,6 +25,10 @@ namespace Special_Pythagorean_triplet
             return product;
         }
 
+        public List<int> ToList()
+        {
+            return _elements;
+        }
     }
 
 }
