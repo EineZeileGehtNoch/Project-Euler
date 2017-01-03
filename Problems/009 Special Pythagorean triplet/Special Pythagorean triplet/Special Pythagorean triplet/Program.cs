@@ -18,7 +18,7 @@ namespace Special_Pythagorean_triplet
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             int sum = 1000;
 
