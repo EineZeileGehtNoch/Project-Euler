@@ -28,6 +28,17 @@ namespace Special_Pythagorean_triplet.Test
             Assert.AreEqual(expected,actual);
         }
 
+        [TestMethod]
+        public void ProductMultipleIntegers()
+        {
+            IntegerTuple integerTuple = new IntegerTuple(1,2,3);
+            int expected = 1*2*3;
+
+            int actual = integerTuple.GetProduct();
+
+            Assert.AreEqual(expected,actual);
+        }
+
         
     }
 
