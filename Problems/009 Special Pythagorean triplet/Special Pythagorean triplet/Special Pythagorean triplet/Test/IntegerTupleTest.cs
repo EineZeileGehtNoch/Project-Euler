@@ -9,8 +9,7 @@ namespace Special_Pythagorean_triplet.Test
         [TestMethod]
         public void ProductEmptyTuple()
         {
-            List<int> integers = new List<int>();
-            IntegerTuple integerTuple = new IntegerTuple(integers);
+            IntegerTuple integerTuple = new IntegerTuple();
             int expected = 1;
 
             int actual = integerTuple.GetProduct();
@@ -21,14 +20,15 @@ namespace Special_Pythagorean_triplet.Test
         [TestMethod]
         public void ProductSingleTuple()
         {
-            List<int> integers = new List<int>{1};
-            IntegerTuple integerTuple = new IntegerTuple(integers);
+            IntegerTuple integerTuple = new IntegerTuple(1);
             int expected = 1;
 
             int actual = integerTuple.GetProduct();
 
             Assert.AreEqual(expected,actual);
         }
+
+        
     }
 
 }

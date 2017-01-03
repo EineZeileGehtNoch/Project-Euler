@@ -8,18 +8,19 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Special_Pythagorean_triplet.Test
 {
     [TestClass]
-    class PythagoreanTest
+    public class PythagoreanTest
     {
         [TestMethod]
         public void SumOfTwelve()
         {
             int sum = 12;
-            List<int> integerList = new List<int>{3,4,5};
-            IntegerTuple expected = new IntegerTuple(integerList);
+            IntegerTuple triplet = Pythagorean.GetTripletWithSumOf(sum);
+            List<int> expected = new List<int>{3,4,5};
 
-            IntegerTuple actual = Pythagorean.GetSmallestTripletWithSumOf(sum);
+            List<int> actual = triplet.ToList();
 
-            Assert.AreEqual(expected,actual);
+
+            CollectionAssert.AreEqual(expected,actual);
         }
     }
 }

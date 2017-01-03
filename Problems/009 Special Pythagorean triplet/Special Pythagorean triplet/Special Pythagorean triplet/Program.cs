@@ -22,7 +22,7 @@ namespace Special_Pythagorean_triplet
         {
             int sum = 1000;
 
-            IntegerTuple abc = Pythagorean.GetSmallestTripletWithSumOf(sum);
+            IntegerTuple abc = Pythagorean.GetTripletWithSumOf(sum);
             int product =abc.GetProduct();
 
             Console.WriteLine(product);

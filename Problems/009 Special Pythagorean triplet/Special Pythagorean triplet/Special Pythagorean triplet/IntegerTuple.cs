@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Special_Pythagorean_triplet
 {
@@ -6,9 +7,9 @@ namespace Special_Pythagorean_triplet
     {
         private List<int> _elements;
 
-        public IntegerTuple(List<int> elements)
+        public IntegerTuple(params int[] elements)
         {
-            _elements = elements;
+            _elements = elements.ToList();
         }
 
 
