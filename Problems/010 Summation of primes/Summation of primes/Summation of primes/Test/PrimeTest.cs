@@ -13,10 +13,21 @@ namespace Summation_of_primes.Test
         [TestMethod]
         public void GetFirstPrime()
         {
-            int numberOfPrimes = 1;
+            int upperBound = 3;
             List<int> expected = new List<int>{2};
 
-            List<int> actual = Prime.GetFirstNPrimes(numberOfPrimes);
+            List<int> actual = Prime.GetPrimesBelow(upperBound);
+
+            CollectionAssert.AreEqual(expected,actual);
+        }
+
+        [TestMethod]
+        public void GetSomePrimes()
+        {
+            int upperBound = 6;
+            List<int> expected = new List<int>{2,3,5};
+
+            List<int> actual = Prime.GetPrimesBelow(upperBound);
 
             CollectionAssert.AreEqual(expected,actual);
         }

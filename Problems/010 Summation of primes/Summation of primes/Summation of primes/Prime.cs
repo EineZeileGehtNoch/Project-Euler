@@ -12,26 +12,33 @@ namespace Summation_of_primes
         private static readonly int FIRST_PRIME=2;
 
 
-        public static List<int> GetFirstNPrimes(int number)
+        public static List<int> GetPrimesBelow(int upperBound)
         {
-            CreatePrimesList(number);
+            CreatePrimesList(upperBound);
 
             return _primes;
         }
 
-        private static void CreatePrimesList(int number)
+        private static void CreatePrimesList(int upperBound)
         {
             CreateEmptyPrimeList();
 
-            FindPrimes(number);
+            FindPrimes(upperBound);
         }
 
-        private static void FindPrimes(int number)
+        private static void FindPrimes(int upperBound)
         {
-            while (MorePrimesNeeded(number))
+            while (LastFoundPrimeSmallEnough(upperBound))
             {
                 FindNextPrime();
             }
+
+            RemoveLastFoundPrime();
+        }
+
+        private static void RemoveLastFoundPrime()
+        {
+            _primes.Remove(_primes.Last());
         }
 
         private static void FindNextPrime()
@@ -51,9 +58,9 @@ namespace Summation_of_primes
             _primes = new List<int>();
         }
 
-        private static bool MorePrimesNeeded(int number)
+        private static bool LastFoundPrimeSmallEnough(int upperBound)
         {
-            return _primes.Count<number;
+            return _primes.Count==0||_primes.Last()<upperBound;
         }
 
         private static bool IsPrime(int candidate)

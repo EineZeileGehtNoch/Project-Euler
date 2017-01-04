@@ -19,9 +19,12 @@ namespace Summation_of_primes
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("\a");
-            Console.ReadKey();
+            int upperBound = 2000000;
+            List<int> primes = Prime.GetPrimesBelow(upperBound);
+            int sum = primes.Product();
 
+            Console.WriteLine(sum);
+            Console.ReadKey();
         }
     }
 }
