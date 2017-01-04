@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace Summation_of_primes.Test
+namespace Summation_of_primes
 {
     static class ListIntExtension
     {
