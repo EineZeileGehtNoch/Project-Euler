@@ -19,6 +19,9 @@ namespace Summation_of_primes
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("\a");
+            Console.ReadKey();
+
         }
     }
 }
