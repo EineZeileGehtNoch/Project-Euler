@@ -24,8 +24,8 @@ namespace Summation_of_primes.Test
         [TestMethod]
         public void GetSomePrimes()
         {
-            int upperBound = 6;
-            List<int> expected = new List<int>{2,3,5};
+            int upperBound = 10;
+            List<int> expected = new List<int>{2,3,5,7};
 
             List<int> actual = Prime.GetPrimesBelow(upperBound);
 

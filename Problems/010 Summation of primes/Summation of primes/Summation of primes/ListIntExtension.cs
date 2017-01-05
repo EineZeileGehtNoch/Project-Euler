@@ -1,41 +1,42 @@
 ﻿using System.Collections.Generic;
+using System.Numerics;
 
 namespace Summation_of_primes
 {
     static class ListIntExtension
     {
-        private static int _product;
+        private static BigInteger _sum;
 
-        public static int Product(this List<int> factors)
+        public static BigInteger Sum(this List<int> summands)
         {
-            ComputeProduct(factors);
+            ComputeSum(summands);
 
-            return _product;
+            return _sum;
         }
 
-        private static void ComputeProduct(List<int> factors)
+        private static void ComputeSum(List<int> summands)
         {
-            SetProductToDefault();
+            SetSumToDefault();
 
-            AddFactorsToProduct(factors);
+            AddFactorsToSum(summands);
         }
 
-        private static void AddFactorsToProduct(List<int> factors)
+        private static void AddFactorsToSum(List<int> summands)
         {
-            foreach (int factor in factors)
+            foreach (int summand in summands)
             {
-                AddToProduct(factor);
+                AddToSum(summand);
             }
         }
 
-        private static void AddToProduct(int factor)
+        private static void AddToSum(int summand)
         {
-            _product *= factor;
+            _sum += summand;
         }
 
-        private static void SetProductToDefault()
+        private static void SetSumToDefault()
         {
-            _product = 1;
+            _sum = 0;
         }
     }
 }

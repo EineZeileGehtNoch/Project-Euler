@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 //https://projecteuler.net/problem=10
@@ -20,8 +21,9 @@ namespace Summation_of_primes
         static void Main(string[] args)
         {
             int upperBound = 2000000;
+
             List<int> primes = Prime.GetPrimesBelow(upperBound);
-            int sum = primes.Product();
+            BigInteger sum = primes.Sum();
 
             Console.WriteLine(sum);
             Console.ReadKey();
