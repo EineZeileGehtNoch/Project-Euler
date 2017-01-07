@@ -10,7 +10,7 @@ namespace Largest_product_in_a_grid.Test
         [TestMethod]
         public void FirstInteger()
         {
-            List<List<int>> integers = MagicStringContainer.GetAsIntegers();
+            List<List<int>> integers = MagicStringContainer.CreateIntegerMatrix();
             int expected = 8;
 
             int actual = integers[0][0];
