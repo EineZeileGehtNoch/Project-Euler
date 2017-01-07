@@ -10,10 +10,10 @@ namespace Largest_product_in_a_grid.Test
         [TestMethod]
         public void FirstInteger()
         {
-            List<List<int>> integers = MagicStringContainer.CreateIntegerMatrix();
+            int[][] integerMatrix = MagicStringContainer.GetIntegerMatrix();
             int expected = 8;
 
-            int actual = integers[0][0];
+            int actual = integerMatrix[0][0];
 
             Assert.AreEqual(expected,actual);
         }
