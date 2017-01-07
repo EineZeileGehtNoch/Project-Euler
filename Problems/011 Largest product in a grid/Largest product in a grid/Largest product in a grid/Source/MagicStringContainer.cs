@@ -28,6 +28,16 @@ namespace Largest_product_in_a_grid.Source
             return _integers;
         }
 
+        public static int GetRowNumber()
+        {
+            return NumberOfRows;
+        }
+
+        public static int GetColumnNumber()
+        {
+            return NumberOfColumns;
+        }
+
         private static void FillIntegerMatrix()
         {
             for (int row = 0; row < NumberOfRows; row++)

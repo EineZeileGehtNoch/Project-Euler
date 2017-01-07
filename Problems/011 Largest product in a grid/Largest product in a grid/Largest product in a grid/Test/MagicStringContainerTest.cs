@@ -17,5 +17,17 @@ namespace Largest_product_in_a_grid.Test
 
             Assert.AreEqual(expected,actual);
         }
+        [TestMethod]
+        public void LastInteger()
+        {
+            int[][] integerMatrix = MagicStringContainer.GetIntegerMatrix();
+            int row = MagicStringContainer.GetRowNumber();
+            int column = MagicStringContainer.GetColumnNumber();
+            int expected = 48;
+
+            int actual = integerMatrix[row - 1][column - 1];
+
+            Assert.AreEqual(expected,actual);
+        }
     }
 }
