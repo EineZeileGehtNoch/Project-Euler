@@ -19,5 +19,18 @@ namespace Largest_product_in_a_grid.Test
 
             Assert.AreEqual(expected,actual);
         }
+
+        [TestMethod]
+        public void SingleNumberInMagicMatrix()
+        {
+            int numberOfFactors = 1;
+            int[][] matrix = MagicStringContainer.GetIntegerMatrix();
+            MatrixContainer matrixContainer = new MatrixContainer(matrix);
+            int expected = 99;
+
+            int actual = matrixContainer.GetLargestProduct(numberOfFactors);
+
+            Assert.AreEqual(expected,actual);
+        }
     }
 }
