@@ -47,6 +47,7 @@
     <Compile Include="Source\MagicStringContainer.cs" />
     <Compile Include="Source\MatrixContainer.cs" />
     <Compile Include="Test\MagicStringContainerTest.cs" />
+    <Compile Include="Test\MatrixContainerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
