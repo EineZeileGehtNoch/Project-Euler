@@ -20,6 +20,38 @@ namespace Largest_product_in_a_grid.Test
             Assert.AreEqual(expected,actual);
         }
 
+
+        [TestMethod]
+        public void DoubleNumberFirstRow()
+        {
+            int numberOfFactors = 2;
+            int[][] matrix = new int[2][];
+            matrix[0] = new int[] {2, 2};
+            matrix[1] = new int[] {1, 1};
+            MatrixContainer matrixContainer = new MatrixContainer(matrix);
+            int expected = 2*2;
+
+            int actual = matrixContainer.GetLargestProduct(numberOfFactors);
+
+            Assert.AreEqual(expected,actual);
+        }
+
+        [TestMethod]
+        public void DoubleNumberSecondRow()
+        {
+            int numberOfFactors = 2;
+            int[][] matrix = new int[2][];
+            matrix[0] = new int[] { 1, 1 };
+            matrix[1] = new int[] { 2, 2 };
+            MatrixContainer matrixContainer = new MatrixContainer(matrix);
+            int expected = 2 * 2;
+
+            int actual = matrixContainer.GetLargestProduct(numberOfFactors);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+
         [TestMethod]
         public void SingleNumberInMagicMatrix()
         {
