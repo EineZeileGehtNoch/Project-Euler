@@ -10,8 +10,7 @@ namespace Largest_product_in_a_grid.Test
         public void SingleNumber()
         {
             int numberOfFactors = 1;
-            int[][] matrix = new int[1][];
-            matrix[0]= new int[]{9};
+            int[,] matrix = {{9}};
             MatrixContainer matrixContainer = new MatrixContainer(matrix);
             int expected = 9;
 
@@ -25,9 +24,7 @@ namespace Largest_product_in_a_grid.Test
         public void DoubleNumberFirstRow()
         {
             int numberOfFactors = 2;
-            int[][] matrix = new int[2][];
-            matrix[0] = new int[] {2, 2};
-            matrix[1] = new int[] {1, 1};
+            int[,] matrix = {{2, 2}, {1, 1}};
             MatrixContainer matrixContainer = new MatrixContainer(matrix);
             int expected = 2*2;
 
@@ -40,9 +37,7 @@ namespace Largest_product_in_a_grid.Test
         public void DoubleNumberSecondRow()
         {
             int numberOfFactors = 2;
-            int[][] matrix = new int[2][];
-            matrix[0] = new int[] { 1, 1 };
-            matrix[1] = new int[] { 2, 2 };
+            int[,] matrix = { { 1, 1 }, { 2, 2 } };
             MatrixContainer matrixContainer = new MatrixContainer(matrix);
             int expected = 2 * 2;
 
@@ -56,7 +51,7 @@ namespace Largest_product_in_a_grid.Test
         public void SingleNumberInMagicMatrix()
         {
             int numberOfFactors = 1;
-            int[][] matrix = MagicStringContainer.GetIntegerMatrix();
+            int[,] matrix = MagicStringContainer.GetIntegerMatrix();
             MatrixContainer matrixContainer = new MatrixContainer(matrix);
             int expected = 99;
 

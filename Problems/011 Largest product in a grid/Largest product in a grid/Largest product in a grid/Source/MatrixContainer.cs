@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace Largest_product_in_a_grid.Source
             DiagonalDownAndRight=0x11
         }
 
-        private readonly int[][] _matrix;
+        private readonly int[,] _matrix;
 
         private int _numberOfFactors;
 
@@ -23,7 +24,7 @@ namespace Largest_product_in_a_grid.Source
 
         private const int DEFAULT_PRODUCT = -1;
 
-        public MatrixContainer(int[][] matrix)
+        public MatrixContainer(int[,] matrix)
         {
             _matrix = matrix;
         }
@@ -58,7 +59,7 @@ namespace Largest_product_in_a_grid.Source
 
             for (int i = 0; i < _numberOfFactors; i++)
             {
-                product *= _matrix[row][column];
+                product *= _matrix[row,column];
                 row += IncrementForRow(direction);
                 column += IncrementForColumn(direction);
             }
@@ -104,7 +105,7 @@ namespace Largest_product_in_a_grid.Source
 
         private int MaxColumn(Direction direction)
         {
-            int maxColumn = _matrix[0].Length-1;
+            int maxColumn = _matrix.GetLength(1)-1;
             if (GoesRight(direction))
             {
                 maxColumn -= _numberOfFactors-1;
@@ -120,7 +121,7 @@ namespace Largest_product_in_a_grid.Source
 
         private int MaxRow(Direction direction)
         {
-            int maxRow = _matrix.Rank-1;
+            int maxRow = _matrix.GetLength(0)-1;
             if (GoesDown(direction))
             {
                 maxRow -= _numberOfFactors-1;
