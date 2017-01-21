@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Largest_product_in_a_grid.Source;
 
 //https://projecteuler.net/problem=11
 
@@ -43,6 +44,14 @@ namespace Largest_product_in_a_grid
     {
         static void Main(string[] args)
         {
+            int numberOfFactors = 4;
+            int[,] matrix = MagicStringContainer.GetIntegerMatrix();
+            MatrixContainer matrixContainer = new MatrixContainer(matrix);
+
+            int largestProduct = matrixContainer.GetLargestProduct(numberOfFactors);
+
+            Console.WriteLine(largestProduct);
+            Console.ReadKey();
         }
     }
 }
