@@ -11,9 +11,10 @@ namespace Largest_product_in_a_grid.Source
     {
         enum Direction
         {
-            Down=0x10,
-            Right=0x01,
-            DiagonalDownAndRight=0x11
+            Down,
+            Right,
+            DiagonalDownAndRight,
+            DiagonalDownAndLeft
         }
 
         private readonly int[,] _matrix;
@@ -37,13 +38,13 @@ namespace Largest_product_in_a_grid.Source
 
             foreach (Direction direction in Enum.GetValues(typeof(Direction)) )
             {
-                for (int row = 0; row <= MaxRow(direction); row++)
+                for (int row = MinRow(direction); row <= MaxRow(direction); row++)
                 {
-                    for (int column = 0; column <= MaxColumn(direction); column++)
+                    for (int column = MinColumn(direction); column <= MaxColumn(direction); column++)
                     {
                         int product = GetProduct(row, column, direction);
 
-                        SetAsNewBiggestProductIfBigger(product);
+                        IfBiggerSetAsNewBiggestProduct(product);
                     }
                 }
             }
@@ -73,7 +74,20 @@ namespace Largest_product_in_a_grid.Source
             {
                 return 1;
             }
+            if (GoesLeft(direction))
+            {
+                return -1;
+            }
             return 0;
+        }
+
+        private static bool GoesLeft(Direction direction)
+        {
+            if (direction==Direction.DiagonalDownAndLeft)
+            {
+                return true;
+            }
+            return false;
         }
 
         private static int IncrementForRow(Direction direction)
@@ -85,7 +99,7 @@ namespace Largest_product_in_a_grid.Source
             return 0;
         }
 
-        private void SetAsNewBiggestProductIfBigger(int product)
+        private void IfBiggerSetAsNewBiggestProduct(int product)
         {
             if (IsBiggerThanLastFoundBiggestProduct(product))
             {
@@ -101,6 +115,15 @@ namespace Largest_product_in_a_grid.Source
         private bool IsBiggerThanLastFoundBiggestProduct(int product)
         {
             return product>_biggestProduct;
+        }
+
+        private int MinRow(Direction direction)
+        {
+            int minrow = 0;
+            if (direction)
+            {
+                
+            }
         }
 
         private int MaxColumn(Direction direction)
