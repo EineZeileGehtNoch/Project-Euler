@@ -121,7 +121,7 @@ namespace Largest_product_in_a_grid.Source
         {
             int minrow = 0;
             
-            if (direction == Direction.DiagonalDownAndLeft)
+            if (GoesLeft(direction))
             {
                 minrow = _numberOfFactors;
             }
