@@ -129,6 +129,22 @@ namespace Largest_product_in_a_grid.Source
             return minrow;
         }
 
+        private int MaxRow(Direction direction)
+        {
+            int maxRow = _matrix.GetLength(0)-1;
+            if (GoesDown(direction))
+            {
+                maxRow -= _numberOfFactors-1;
+            }
+
+            return maxRow;
+        }
+
+        private int MinColumn(Direction direction)
+        {
+            return 0;
+        }
+
         private int MaxColumn(Direction direction)
         {
             int maxColumn = _matrix.GetLength(1)-1;
@@ -145,20 +161,9 @@ namespace Largest_product_in_a_grid.Source
             return direction==Direction.Right||direction==Direction.DiagonalDownAndRight;
         }
 
-        private int MaxRow(Direction direction)
-        {
-            int maxRow = _matrix.GetLength(0)-1;
-            if (GoesDown(direction))
-            {
-                maxRow -= _numberOfFactors-1;
-            }
-
-            return maxRow;
-        }
-
         private static bool GoesDown(Direction direction)
         {
-            return direction==Direction.Down||direction==Direction.DiagonalDownAndRight;
+            return direction==Direction.Down||direction==Direction.DiagonalDownAndRight|| direction==Direction.DiagonalDownAndLeft;
         }
     }
 }
