@@ -120,10 +120,13 @@ namespace Largest_product_in_a_grid.Source
         private int MinRow(Direction direction)
         {
             int minrow = 0;
-            if (direction)
+            
+            if (direction == Direction.DiagonalDownAndLeft)
             {
-                
+                minrow = _numberOfFactors;
             }
+
+            return minrow;
         }
 
         private int MaxColumn(Direction direction)
