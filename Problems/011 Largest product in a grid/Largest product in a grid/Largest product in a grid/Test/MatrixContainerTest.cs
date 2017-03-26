@@ -63,7 +63,14 @@ namespace Largest_product_in_a_grid.Test
         [TestMethod]
         public void DoubleNumberInThreeDimensionalMatrix()
         {
-            
+            int numberOfFactors = 2;
+            int[,] matrix = {{1, 1, 1}, {1, 1, 1}, {1, 3, 3}};
+            MatrixContainer matrixContainer = new MatrixContainer(matrix);
+            int expected = 3*3;
+
+            int actual = matrixContainer.GetLargestProduct(numberOfFactors);
+
+            Assert.AreEqual(expected,actual);
         }
     }
 }
