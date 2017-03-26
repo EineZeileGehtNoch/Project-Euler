@@ -34,22 +34,42 @@ namespace Largest_product_in_a_grid.Source
         {
             _numberOfFactors = numberOfFactors;
 
-            _biggestProduct = DEFAULT_PRODUCT;
-
-            foreach (Direction direction in Enum.GetValues(typeof(Direction)) )
-            {
-                for (int row = MinRow(direction); row <= MaxRow(direction); row++)
-                {
-                    for (int column = MinColumn(direction); column <= MaxColumn(direction); column++)
-                    {
-                        int product = GetProduct(row, column, direction);
-
-                        IfBiggerSetAsNewBiggestProduct(product);
-                    }
-                }
-            }
+            FindLargestProduct();
 
             return _biggestProduct;
+        }
+
+        private void FindLargestProduct()
+        {
+            _biggestProduct = DEFAULT_PRODUCT;
+
+            foreach (Direction direction in Enum.GetValues(typeof(Direction)))
+            {
+                TestMatrix(direction);
+            }
+        }
+
+        private void TestMatrix(Direction direction)
+        {
+            for (int row = MinRow(direction); row <= MaxRow(direction); row++)
+            {
+                TestRow(direction, row);
+            }
+        }
+
+        private void TestRow(Direction direction, int row)
+        {
+            for (int column = MinColumn(direction); column <= MaxColumn(direction); column++)
+            {
+                TestProduct(row, column, direction);
+            }
+        }
+
+        private void TestProduct(int row, int column, Direction direction)
+        {
+            int product = GetProduct(row, column, direction);
+
+            IfBiggerSetAsNewBiggestProduct(product);
         }
 
         private int GetProduct(int startingRow, int startingColumn, Direction direction)
