@@ -59,5 +59,11 @@ namespace Largest_product_in_a_grid.Test
 
             Assert.AreEqual(expected,actual);
         }
+
+        [TestMethod]
+        public void DoubleNumberInThreeDimensionalMatrix()
+        {
+            
+        }
     }
 }
