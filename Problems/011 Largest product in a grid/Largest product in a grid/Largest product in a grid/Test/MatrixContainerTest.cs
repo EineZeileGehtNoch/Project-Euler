@@ -72,5 +72,18 @@ namespace Largest_product_in_a_grid.Test
 
             Assert.AreEqual(expected,actual);
         }
+
+        [TestMethod]
+        public void TripleNumberInThreeDimensionalMatrix()
+        {
+            int numberOfFactors = 3;
+            int[,] matrix = {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}};
+            MatrixContainer matrixContainer = new MatrixContainer(matrix);
+            int expected = 1;
+
+            int actual = matrixContainer.GetLargestProduct(numberOfFactors);
+
+            Assert.AreEqual(expected,actual);
+        }
     }
 }
